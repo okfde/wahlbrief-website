@@ -329,12 +329,12 @@ a {
 .btn-new {
   padding: 1.25rem 1.625rem;
   color: $gray-100;
-  background-color: $secondary;
+  background-color: $primary;
   border-radius: 0.125rem;
   transition: all var(--transition);
   &:hover {
     color: $gray-100;
-    background-color: darken($secondary, 5%);
+    background-color: darken($primary, 5%);
   }
 }
 

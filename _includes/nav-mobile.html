@@ -26,7 +26,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <button class="closebtn" onclick="closeNav()">Close<span class="ms-2">X</span></button>
+                <button class="closebtn" onclick="closeNav()">{% t nav.close %}<span class="ms-2">X</span></button>
             </div>
         </div>
     </div>
@@ -35,24 +35,19 @@
         <a href="{{ site.baseurl }}/">{% t left.home %}</a>
         <a href="{{ site.baseurl }}/about.html">{% t left.about %}</a>
         <a href="{{ site.baseurl }}/faq.html">{% t left.faq %}</a>
-        <a href="{{ site.baseurl }}/donate.html">{% t left.donate %}</a>
-        <a href="{{ site.baseurl }}/imprint.html">{% t left.imprint %}</a>
+        <a href="{{ site.donate_url }}">{% t left.donate %}</a>
+        <a href="{{ site.imprint_url }}">{% t left.imprint %}</a>
     </div>
 
     <div class="overlay-footer">
         <div class="social-links">
-            <a href="{{ site.facebook }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-facebook"></i></a>
             <a href="{{ site.bluesky }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-bluesky"></i></a>
             <a href="{{ site.linkedin }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="{{ site.instagram }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-instagram"></i></a>
         </div>
         <p class="mb-0 mt-4">
             <small>
-                {% t left.copyright %} {{ 'now' | date: "%Y" }}
-            </small>
-            <br />
-            <small>
-                {% t left.built %}
+                {% t left.about_bottom %}
             </small>
         </p>
     </div>

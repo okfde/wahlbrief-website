@@ -1,10 +1,9 @@
-title: Wahlbrief - Briefwahl zur Bundestagswahl beantragen
-email: contact@wahlbrief.de
+title: Wahlbrief - Briefwahl zur Landtagswahl beantragen
+email: info@fragdenstaat.de
 description: >-
   Jetzt die Unterlagen zur Briefwahl beantragen: Schnell, bequem und online. Wahlbrief erstellt in 2 Minuten den Online-Antrag.
 baseurl: ""
 url: "https://wahlbrief.de/"
-twitter_username: wahlbrief
 github_username: Wahlbrief
 
 # Build settings
@@ -18,8 +17,8 @@ default_locale_in_subfolder: false
 
 markdown: kramdown
 
-facebook: "https://www.facebook.com/mehrdemokratie"
-twitter: "https://x.com/volksentscheid"
-bluesky: "https://bsky.app/profile/mehrdemokratie.bsky.social"
-linkedin: "https://www.linkedin.com/company/mehr-demokratie-e-v-"
-instagram: "https://www.instagram.com/mehr_demokratie"
+bluesky: "https://bsky.app/profile/fragdenstaat.de"
+linkedin: "https://www.linkedin.com/company/fragdenstaat/"
+instagram: "https://www.instagram.com/fragdenstaat/"
+imprint_url: "https://fragdenstaat.de/impressum/"
+donate_url: "https://fragdenstaat.de/spenden/?pk_campaign=wahlbrief"
