@@ -2,8 +2,13 @@
 <html lang="{{ site.lang }}">
 {% include head.html %}
 
-<body>
+<body data-baseurl="{{ site.baseurl }}">
     {{ content }}
+    <template id="right.invalidemail">{% t right.invalidemail %}</template>
+    <template id="right.successfulregistration">{% t right.successfulregistration %}</template>
+    <template id="right.message.sent">{% t right.message.sent %}</template>
+    <template id="right.noprocess">{% t right.noprocess %}</template>
+    <template id="right.invalidZipcode">{% t right.invalidZipcode %}</template>
     {% include js.html %}
 </body>
 

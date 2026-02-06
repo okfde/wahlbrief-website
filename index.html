@@ -248,7 +248,7 @@ layout: default
                                     <input id="zipcode" type="text" name="zipcode" autocomplete="off"
                                         inputmode="numeric"
                                         onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
-                                        class="form-control mb-3 mb-lg-0" minlength="9" maxlength="120"
+                                        class="form-control" minlength="9" maxlength="120"
                                         placeholder="{% t right.placeholder %}" aria-label="{% t right.placeholder %}"
                                         aria-describedby="{% t right.placeholder %}">
                                     <label for="zipcode">{% t right.placeholder %}</label>
@@ -261,15 +261,15 @@ layout: default
                                     </div>
                                 </div>
 
-                                <div class="autocomplete-items mb-3" id="autocomplete-list">
+                                <div class="autocomplete-items" id="autocomplete-list">
                                 </div>
 
                                 <button id="next-click" onclick="secondpage();"
-                                    class="btn btn-new d-block w-100 d-xxl-none"><i class="fas fa-search me-2"></i>{% t
+                                    class="btn btn-new mt-3 mg-lg-0 d-block w-100 d-xxl-none"><i class="fas fa-search me-2"></i>{% t
                                     right.button
                                     %}</button>
 
-                                <p>{% t right.tos %}</p>
+                                <p class="mt-5">{% t right.tos %}</p>
                             </div>
                             <p class="mb-0 mt-4 d-block d-lg-none">
                                 <small>
@@ -302,7 +302,7 @@ layout: default
                                         <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="form-name"
-                                                    pattern="^[a-zA-Z-,.\säöüÄÖÜß]{2,}$" maxlength="60"
+                                                    maxlength="60"
                                                     placeholder="{% t right.firstname %}"
                                                     aria-label="{% t right.firstname %}"
                                                     aria-describedby="{% t right.firstname %}">
@@ -312,7 +312,7 @@ layout: default
                                         <div class="col-12 col-lg-6">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="form-surname"
-                                                    pattern="^[a-zA-Z-,.\säöüÄÖÜß]{2,}$" maxlength="60"
+                                                    maxlength="60"
                                                     placeholder="{% t right.lastname %}"
                                                     aria-label="{% t right.lastname %}"
                                                     aria-describedby="{% t right.lastname %}">
@@ -385,7 +385,7 @@ layout: default
                                         <div class="col-12 col-lg-9">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="form-city"
-                                                    pattern="^[a-zA-Z-,.\säöüÄÖÜß()\/]{2,}$" maxlength="60"
+                                                    minlength="2" maxlength="60"
                                                     placeholder="{% t right.shipping.city %}"
                                                     aria-label="{% t right.shipping.city %}"
                                                     aria-describedby="{% t right.shipping.city %}">
@@ -403,93 +403,24 @@ layout: default
                                         <div class="col-12">
                                             <div class="form-floating">
                                                 <input type="email" name="email" class="form-control" id="email"
-                                                    pattern="(?![_.-])((?![_.-][_.-])[a-z\d_.-]){0,63}[a-z\d]@((?!-)((?!--)[a-z\d-]){0,63}[a-z\d]\.){1,2}([a-z]{2,14}\.)?[a-z]{2,14}"
                                                     placeholder="{% t right.email %}" aria-label="{% t right.email %}"
                                                     aria-describedby="{% t right.email %}">
                                                 <label for="email">{% t right.email %}</label>
                                             </div>
 
                                             <input type=hidden name="htmlemail" value="1">
-                                            <input type="hidden" name="list[{% t listid %}]" value="signup" />
                                             <input type="hidden" name="subscribe" value="subscribe" />
                                         </div>
 
                                         <div id="result"></div>
                                     </form>
 
-                                    <!-- AJAX newsletter subscription -->
-                                    <script>
-                                        function checkform() {
-                                            re = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
-                                            if (!re.test(document.querySelector("#email").value)) {
-                                                const result = document.querySelector("#result");
-                                                const emailfield = document.querySelector("#email");
-                                                const emailcb1 = document.querySelector("#emailupdates");
-                                                const emailcb2 = document.querySelector("#emailupdatesMobile");
-
-                                                result.innerHTML = "<div class='error mt-3'><i class='fas fa-times-circle me-2'></i>{% t right.invalidemail %}</div>";
-                                                emailfield.value = "";
-                                                emailcb1.checked = false;
-                                                emailcb2.checked = false;
-                                                emailfield.focus();
-                                                return false;
-                                            }
-                                            return true;
-                                        }
-
-                                        function submitForm() {
-                                            successMessage =
-                                                "<div class='success mt-3'><i class='fas fa-check-circle me-2'></i>{% t right.successfulregistration %}</div>";
-                                            const result = document.querySelector("#result");
-                                            const emailfield = document.querySelector("#email");
-                                            const emailcb1 = document.querySelector("#emailupdates");
-                                            const emailcb2 = document.querySelector("#emailupdatesMobile");
-
-                                            // Clear previous messages
-                                            result.innerHTML = "";
-
-                                            const data = new URLSearchParams(new FormData(document.querySelector("#subscribeform"))).toString();
-                                            fetch("https://list.wahlbrief.de/?p=asubscribe&id={% t listsub %}", {
-                                                method: "POST",
-                                                mode: "cors",
-                                                headers: {
-                                                    "Content-Type": "application/x-www-form-urlencoded",
-                                                },
-                                                body: data,
-                                            }).then(res => {
-                                                if (res.ok) {
-                                                    return res.text();
-                                                } else {
-                                                    throw new Error("Server response was not OK");
-                                                    // result.innerHTML = "<div class='error mt-3'><i class='fas fa-times-circle me-2'></i>{% t right.noprocess %}</div>";
-                                                    // emailfield.value = "";
-                                                    // emailfield.focus();
-                                                    // emailcb1.checked = false;
-                                                    // emailcb2.checked = false;
-                                                }
-                                            }).then(text => {
-                                                result.innerHTML = successMessage;
-                                            }).catch(e => {
-                                                console.error(e);
-                                                console.error("Failed to send data.");
-                                                result.innerHTML = "<div class='error mt-3'><i class='fas fa-times-circle me-2'></i>{% t right.noprocess %}</div>";
-                                                emailfield.value = "";
-                                                emailcb1.checked = false;
-                                                emailcb2.checked = false;
-                                            })
-                                        }
-                                    </script>
-                                    <!-- AJAX newsletter subscription -->
                                 </div>
 
                                 <form>
                                     <div class="form-check mt-2 d-none d-lg-flex align-items-center">
                                         <input class="form-check-input me-2" type="checkbox"
-                                            onchange="if (this.checked) { 
-                                                if (checkform()) submitForm(); 
-                                            } else { 
-                                                document.querySelector('#result').innerHTML = ''; 
-                                            } return false;" value=""
+                                            value=""
                                             id="emailupdates">
                                         <label class="form-check-label" for="emailupdates">
                                             {% t right.email-updates %}
@@ -501,22 +432,18 @@ layout: default
                                         <p class="mb-0">{% t right.email-updates %}</p>
                                         <div>
                                             <input class="tgl tgl-light" id="emailupdatesMobile" type="checkbox"
-                                                value="" onchange="if (this.checked) { 
-                                                    if (checkform()) submitForm(); 
-                                                } else { 
-                                                    document.querySelector('#result').innerHTML = ''; 
-                                                } return false;" />
+                                                value="" />
                                             <label class="tgl-btn" for="emailupdatesMobile"></label>
                                         </div>
                                     </div>
 
-                                    <div class="background-gray-100 py-3 px-3 my-3">
+                                    <!-- <div class="background-gray-100 py-3 px-3 my-3">
                                         <div class="d-flex align-items-center justify-content-lg-start">
                                             <i class="fas fa-info-circle color-secondary me-2"></i>
                                             <p class="mb-0">{% t right.arrival %} <strong id="arrival-date">03.02. - 14.02.</strong>
                                             </p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-check d-none d-lg-block">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault"
                                             id="sameaddress" value="normal" checked>
@@ -607,7 +534,7 @@ layout: default
                                         <div class="col-12 col-lg-9">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="form-newcity"
-                                                    pattern="^[a-zA-Z-,.\säöüÄÖÜß()\/]{2,}$" maxlength="60"
+                                                    minlength="2" maxlength="60"
                                                     placeholder="{% t right.shipping.city %}"
                                                     aria-label="{% t right.shipping.city %}"
                                                     aria-describedby="{% t right.shipping.city %}">

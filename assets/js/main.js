@@ -127,7 +127,7 @@ function getContent(link) {
   link.href = generateMailtoUrl();
   const displayMessage = document.getElementById("final-message");
   displayMessage.innerHTML =
-    "<i class='fas fa-check-circle me-2'></i>{% t right.message.sent %}";
+    "<i class='fas fa-check-circle me-2'></i>" + getTranslation("right.message.sent");
   displayMessage.classList.add("success");
   return false;
 }
@@ -631,16 +631,8 @@ elements.searchInput?.addEventListener("keyup", (e) => {
     });
 
     if (matchArray.length <= 0) {
-      let string = location.href;
-      let convertedString = string.toLowerCase();
-
-      if (convertedString.indexOf("en") != -1) {
         elements.suggestions.innerHTML =
-          "<div class='error'><i class='fas fa-times-circle me-2'></i><span>Invalid ZIP code</span></div>";
-      } else {
-        elements.suggestions.innerHTML =
-          "<div class='error'><i class='fas fa-times-circle me-2'></i><span>Ungültige Postleitzahl</span></div>";
-      }
+          "<div class='error'><i class='fas fa-times-circle me-2'></i><span>" + getTranslation("right.invalidZipCode") + "</span></div>";
       return;
     }
 
@@ -698,7 +690,7 @@ elements.copier.addEventListener("click", (event) => {
 // --- Data Loading and Filtering ---
 
 (async () => {
-  const endpoint = "/assets/plz.json";
+  const endpoint = document.body.dataset.baseurl + "/assets/plz.json";
   const result = await fetch(endpoint).then((blob) => blob.json());
 
   const sorted = result.sort((a, b) => {
@@ -806,4 +798,86 @@ class Mailto_url {
       return out.join("");
     };
   }
+}
+
+function getTranslation(key) {
+  return document.getElementById(key).innerHTML
+}
+
+function checkform() {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(document.querySelector("#email").value)) {
+        const result = document.querySelector("#result");
+        const emailfield = document.querySelector("#email");
+        const emailcb1 = document.querySelector("#emailupdates");
+        const emailcb2 = document.querySelector("#emailupdatesMobile");
+
+        result.innerHTML = "<div class='error mt-3'><i class='fas fa-times-circle me-2'></i>" + getTranslation("right.invalidemail") + "</div>";
+        emailfield.value = "";
+        emailcb1.checked = false;
+        emailcb2.checked = false;
+        emailfield.focus();
+        return false;
+    }
+    return true;
+}
+
+function submitForm() {
+    successMessage =
+        "<div class='success mt-3'><i class='fas fa-check-circle me-2'></i>" + getTranslation("right.successfulregistration") + "</div>";
+    const result = document.querySelector("#result");
+    const emailfield = document.querySelector("#email");
+    const emailcb1 = document.querySelector("#emailupdates");
+    const emailcb2 = document.querySelector("#emailupdatesMobile");
+
+    // Clear previous messages
+    result.innerHTML = "";
+
+    const newsletterEndPoint = "https://fragdenstaat.de/newsletter/update/wahlbrief/subscribe-ajax/"
+
+    const data = new URLSearchParams(new FormData(document.querySelector("#subscribeform"))).toString();
+    fetch(newsletterEndPoint, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: data,
+    }).then(res => {
+        if (res.ok) {
+            return res.text();
+        } else {
+            result.innerHTML = "<div class='error mt-3'><i class='fas fa-times-circle me-2'></i>" + getTranslation("right.noprocess") + "</div>";
+            emailfield.value = "";
+            emailfield.focus();
+            emailcb1.checked = false;
+            emailcb2.checked = false;
+        }
+    }).then(text => {
+        result.innerHTML = successMessage;
+    }).catch(e => {
+        console.error(e);
+        console.error("Failed to send data.");
+        result.innerHTML = "<div class='error mt-3'><i class='fas fa-times-circle me-2'></i>" + getTranslation("right.noprocess") + "</div>";
+        emailfield.value = "";
+        emailcb1.checked = false;
+        emailcb2.checked = false;
+    })
+}
+
+const checkListener = function() {
+  if (this.checked) { 
+      if (checkform()) submitForm(); 
+  } else { 
+      document.querySelector('#result').innerHTML = ''; 
+  } return false;
+}
+
+const emailUpdates = document.getElementById("emailupdates")
+if (emailUpdates) {
+  emailUpdates.addEventListener("change", checkListener)
+}
+const emailupdatesMobile = document.getElementById("emailupdatesMobile")
+if (emailupdatesMobile) {
+  emailupdatesMobile.addEventListener("change", checkListener)
 }

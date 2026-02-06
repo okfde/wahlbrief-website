@@ -39,6 +39,7 @@ right:
   lastname: "Last Name"
   street: "Street and No. (main residence)"
   zipcode: "Post code"
+  invalidZipcode: "Invalid post code"
   city: "City"
   state: "State/Province/Region"
   email: "Email address"

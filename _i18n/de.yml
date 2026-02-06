@@ -45,6 +45,7 @@ right:
   street: "Straße und Hausnummer (Hauptwohnsitz)"
   number: "Nr."
   zipcode: "PLZ"
+  invalidZipcode: "Ungültige Postleitzahl"
   city: "Ort"
   state: "Land"
   email: "E-Mail-Adresse"
