@@ -2,7 +2,23 @@ listid: "2"
 listsub: "1"
 left:
   title: "Jetzt Briefwahl beantragen"
-  subtitle: "Am 23. Februar ist Bundestagswahl. Bereits vorab kann die Stimme per Briefwahl abgegeben werden. Die Beantragung der Unterlagen per E-Mail dauert nur 2 Minuten.<br /><br /><b>Achtung: Die Beantragung der Briefwahl sollte wegen der Postlaufzeit ab sofort nur noch nach Rücksprache mit dem lokalen Wahlamt erfolgen. Wir empfehlen für die verbleibende Zeit die Vorab-Wahl z.B. im Bürgeramt.</b><br /><br /><small>Die Unterlagen werden ab dem 10. Februar innerhalb weniger Tage zugestellt. Wegen der kurzen Vorbereitungszeit sollte der Antrag so früh wie möglich gestellt werden. Die Briefwahlunterlagen müssen beim Wahlamt spätestens am Wahltag, 18 Uhr eingehen.</small>"
+  subtitle: |
+    <p>Diese Wahlen finden bald statt:</p>
+    <ul>
+      <li>am 8. März 2026 ist Landtagswahl in <b>Baden-Württemberg</b></li>
+      <li>am 8. März 2026 sind in <b>Bayern</b> Wahlen zu Kreistagen, Stadträten, Gemeinderäten</li>
+      <li>am 15. März 2026 sind	in <b>Hessen</b> Wahlen zu Kreistagen, Stadtverordnetenversammlungen, Gemeindevertretungen, Ortsbeiräten</li>
+      <li>am 22. März 2026 ist Landtagswahl in <b>Rheinland-Pfalz</b></li>
+      <!--
+      <li>Am 6. September 2026 ist Landtagswahl in <b>Sachsen-Anhalt</b></li>
+      <li>Am 13. September 2026 ist Kommunalwahl in <b>Niedersachsen</b></li>
+      <li>Am 20. September 2026 ist Abgeordnetenhauswahl in <b>Berlin</b></li>
+      <li>Am 20. September 2026 ist Landtagswahl in <b>Mecklenburg-Vorpommern</b></li>
+      -->
+    </ul>
+    <p>Bereits vorab kann die Stimme per Briefwahl abgegeben werden. Die Beantragung der Unterlagen per E-Mail dauert nur 2 Minuten.<br /><br />
+    <!-- <b>Achtung: Die Beantragung der Briefwahl sollte wegen der Postlaufzeit ab sofort nur noch nach Rücksprache mit dem lokalen Wahlamt erfolgen. Wir empfehlen für die verbleibende Zeit die Vorab-Wahl z.B. im Bürgeramt.</b><br /><br /> -->
+    <small>Die Unterlagen werden ab dem 10. Februar innerhalb weniger Tage zugestellt. Wegen der kurzen Vorbereitungszeit sollte der Antrag so früh wie möglich gestellt werden. Die Briefwahlunterlagen müssen beim Wahlamt spätestens am Wahltag, 18 Uhr eingehen.</small></p>
   preview: "Vorschau: Briefwahl-Antrag"
   home: "Home"
   about: "Projekt"
@@ -77,7 +93,7 @@ right:
     second: "2) Betreff übernehmen:"
     third: "3) Diese Hinweise löschen und unten stehenden Text beibehalten"
   letter:
-    title: "Sehr geehrte Damen und Herren,<br /><br />hiermit beantrage ich die Zusendung der Briefwahlunterlagen für die Bundestagswahl 2025."
+    title: "Sehr geehrte Damen und Herren,<br /><br />hiermit beantrage ich die Zusendung der Briefwahlunterlagen für die Landtagswahl 2026."
     name: "Vorname"
     surname: "Nachname"
     birthday: "Geburtsdatum"
@@ -86,16 +102,15 @@ right:
     sendalternative: "Bitte senden Sie mir die Unterlagen an folgende Adresse:"
     regards: "Mit freundlichen Grüßen"
   sharing:
-    copy: "Ich habe gerade Briefwahlunterlagen zur Bundestagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0Ahttps://wahlbrief.de/"
+    copy: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0Ahttps://wahlbrief.de/"
     email:
-      subject: "Briefwahl beantragen zur Bundestagswahl: Jede Stimme zählt!"
-      body: "Hallo!%0D%0A%0D%0AIch habe gerade online die Briefwahlunterlagen zur Bundestagswahl beantragt.%0D%0ADas geht total schnell und einfach: https://wahlbrief.de/%0D%0AWahlbrief ist ein Angebot von Mehr Demokratie e.V.%0D%0A%0D%0ALiebe Grüße,%0D%0A"
-    facebook: "Ich habe gerade Briefwahlunterlagen zur Bundestagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0Ahttps://wahlbrief.de/"
-    twitter: "Ich habe gerade Briefwahlunterlagen zur Bundestagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0A@wahlbrief https://wahlbrief.de/"
-    bluesky: "Ich habe gerade Briefwahlunterlagen zur Bundestagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0A@mehrdemokratie.bsky.social https://wahlbrief.de/"
-    linkedin: "Ich habe gerade Briefwahlunterlagen zur Bundestagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0Ahttps://wahlbrief.de/"
-    telegram: "Ich habe gerade Briefwahlunterlagen zur Bundestagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt."
-    whatsapp: "Ich habe gerade Briefwahlunterlagen zur Bundestagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt. https://wahlbrief.de/"
+      subject: "Briefwahl beantragen zur Landtagswahl: Jede Stimme zählt!"
+      body: "Hallo!%0D%0A%0D%0AIch habe gerade online die Briefwahlunterlagen zur Landtagswahl beantragt.%0D%0ADas geht total schnell und einfach: https://wahlbrief.de/%0D%0AWahlbrief ist ein Angebot von FragDenStaat%0D%0A%0D%0ALiebe Grüße,%0D%0A"
+    facebook: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0Ahttps://wahlbrief.de/"
+    bluesky: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0A@mehrdemokratie.bsky.social https://wahlbrief.de/"
+    linkedin: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0Ahttps://wahlbrief.de/"
+    telegram: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt."
+    whatsapp: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt. https://wahlbrief.de/"
 faq:
   left:
     title: "Häufig gestellte Fragen"
@@ -126,54 +141,56 @@ questions:
   - title: "Kann ich den Wahlbrief auch direkt beim Wahlamt einwerfen?"
     answer: "Das ist möglich und dann sinnvoll, wenn die Briefwahlunterlagen erst am Tag vor oder am Tag der Wahl ausgefüllt werden. Der Brief muss bis zur Schließung der Wahllokale beim Wahlamt eingegangen sein."
   - title: "Wie geht es nach meinem Antrag auf Briefwahl weiter?"
-    answer: "Die Briefwahlunterlagen werden innerhalb weniger Werktage an die angegebene Adresse versandt. Eine Anleitung, wie die Briefwahlunterlagen ausgefüllt werden, gibt es auf der <a href='https://www.bundeswahlleiterin.de/bundestagswahlen/2025/informationen-waehler/briefwahl.html#2308ae86-bd0f-44e6-ac5e-4116ece45785' target='_blank'>Website der Bundeswahlleiterin</a>."
+    answer: "Die Briefwahlunterlagen werden innerhalb weniger Werktage an die angegebene Adresse versandt."
 imprint:
   left:
     title: "Offizielle Angaben"
-    subtitle: "wahlbrief ist ein Projekt von <a href='https://www.mehr-demokratie.de/' target='_blank'>Mehr Demokratie e.V.</a> zur Bundestagswahl 2025."
+    subtitle: "wahlbrief ist ein Projekt von <a href='https://fragdenstaat.de/' target='_blank'>FragDenStaat</a> zu den Landtagswahlen 2026."
   right:
     title: "Impressum"
-    text: "
-<b>Angaben gemäß § 5 TMG:</b><br />
-Mehr Demokratie e.V.<br />
-Haus der Demokratie und Menschenrechte<br />
-Greifswalder Str. 4<br />
-10405 Berlin<br />
-<br />
-<b>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</b><br />
-Juris Vetra. <a href='mailto:juris@wahlbrief.de'>Kontakt aufnehmen</a><br />
-<br />
-<b>Konzept und Realisierung:</b><br />
-Juris Vetra, Johann-Friedrich Salzmann<br />
-<br />
-<b>Kontakt:</b><br />
-Support, Technische Probleme: <a href='mailto:contact@wahlbrief.de'>Kontakt aufnehmen</a><br />
-Projektbezogene Anfragen: <a href='mailto:wahlbuero@wahlbrief.de'>Kontakt aufnehmen</a><br />
-Presse-Anfragen: <a href='mailto:presse@mehr-demokratie.de'>Kontakt aufnehmen</a><br />
-<br />
-<b>Datenschutz:</b><br />
-Hinweise zum Datenschutz: <a href='/terms.html'>Datenschutzbestimmungen</a>
-"
+    text: |
+      <b>Angaben gemäß § 5 TMG:</b><br />
+      Open Knowledge Foundation Deutschland e.V.<br />
+      FragDenStaat<br />
+      Singerstr. 109<br />
+      10179 Berlin<br />
+      https://okfn.de<br />
+      Fax: +49-30-85102320<br />
+      <br />
+      Eingetragen beim Amtsgericht Charlottenburg, VR 30468 B.<br />
+      Vertretungsberechtigter Vorstand: Kristina Klein, Felix Reda, Lea Gimpel, Gabriele C. Klug, Stefan Heumann, Elina Eickstädt, Fiona Krakenbürger. Inhaltlich verantwortlich gemäß § 5 DDG, § 18 MStV: Arne Semsrott<br />
+      <b>Konzept und Realisierung:</b><br />
+      Juris Vetra, Johann-Friedrich Salzmann<br />
+      <br />
+      <b>Kontakt:</b><br />
+      Projektbezogene Anfragen: <a href='mailto:info@fragdenstaat.de'>Kontakt aufnehmen</a><br />
+      Presse-Anfragen: <a href='mailto:presse@fragdenstaat.de'>Kontakt aufnehmen</a><br />
+      <br />
+      <b>Datenschutz:</b><br />
+      Hinweise zum Datenschutz: <a href='/terms.html'>Datenschutzbestimmungen</a>
     button: "Kontakt aufnehmen"
 about:
   left:
     title: "Über das Projekt"
-    subtitle: "wahlbrief ist ein Projekt von <a href='https://www.mehr-demokratie.de/' target='_blank'>Mehr Demokratie e.V.</a> zur Bundestagswahl 2025. Wir möchten, dass so viele Menschen wie möglich an der Wahl teilnehmen. <br /><br />Es gibt viele Fälle, in denen die Briefwahl die einfachste und bequemste Art ist, zu wählen. Wir helfen dabei, innerhalb von 2 Minuten die Briefwahl-Unterlagen online beim zuständigen Wahlamt zu beantragen.<br /><br /><br />
-<small><i>Mehr Demokratie e.V. ist ein überparteilicher, gemeinnütziger Verein, der sich für mehr direkte Demokratie und Bürgerbeteiligung einsetzt.
+    subtitle: |
+      wahlbrief ist ein Projekt von <a href='https://fragdenstaat.de/' target='_blank'>FragDenStaat</a> zu den Landtagswahlen 2026. Wir möchten, dass so viele Menschen wie möglich an der Wahl teilnehmen. <br /><br />Es gibt viele Fälle, in denen die Briefwahl die einfachste und bequemste Art ist, zu wählen. Wir helfen dabei, innerhalb von 2 Minuten die Briefwahl-Unterlagen online beim zuständigen Wahlamt zu beantragen.<br /><br /><br />
+      <small><i>FragDenStaat ist ein Projekt des gemeinnützigen Open Knowledge Foundation Deutschland e.V.
 
-<br /><br /> Konzept und Realisierung: Juris Vetra, Johann-Friedrich Salzmann<br />
-</small></i>"
+      <br /><br /> Konzept und Realisierung: Juris Vetra, Johann-Friedrich Salzmann<br />
+      </small></i>
   right:
     title: "Jede Stimme zählt."
-    text: "Eine starke Demokratie lebt von einer hoher Wahlbeteiligung. In Deutschland liegt diese meist zwischen 60 und 80 Prozent: Das bedeutet, viele Millionen Bürger:innen stimmen nicht mit darüber ab, welche:r Abgeordnete:r sie im Parlament repräsentiert und von welcher Partei sie regiert werden möchten. Wir setzen uns dafür ein, dass mehr wahlberechtigte Menschen wählen und die Hürden dafür möglichst niedrig sind.<br /><br />
+    text: |
+      Eine starke Demokratie lebt von einer hoher Wahlbeteiligung. In Deutschland liegt diese meist zwischen 60 und 80 Prozent: Das bedeutet, viele Millionen Bürger:innen stimmen nicht mit darüber ab, welche:r Abgeordnete:r sie im Parlament repräsentiert und von welcher Partei sie regiert werden möchten. Wir setzen uns dafür ein, dass mehr wahlberechtigte Menschen wählen und die Hürden dafür möglichst niedrig sind.<br /><br />
+      Wahlen finden in Deutschland meist an Sonntagen statt. Wahlberechtigte können ihre Stimme zwischen 8 und 18 Uhr in einem zugewiesenen Wahllokal an ihrem Hauptwohnsitz abgeben. Für manche Menschen ist das aus beruflichen Gründen oder wegen anderer Verpflichtungen nicht möglich, andere sind zum Wahltermin verreist oder krank. <br /><br />
 
-Wahlen finden in Deutschland meist an Sonntagen statt. Wahlberechtigte können ihre Stimme zwischen 8 und 18 Uhr in einem zugewiesenen Wahllokal an ihrem Hauptwohnsitz abgeben. Für manche Menschen ist das aus beruflichen Gründen oder wegen anderer Verpflichtungen nicht möglich, andere sind zum Wahltermin verreist oder krank. <br /><br />
+      Es gibt weitere gute Gründe, warum Bürger:innen am Tag der Wahl nicht wählen gehen, obwohl sie das grundsätzlich möchten. Wir glauben, dass die Briefwahl für alle eine gute Möglichkeit ist, unkompliziert und rechtzeitig im Voraus zu wählen - jederzeit, von überall und kostenfrei. Mit der Corona-Pandemie hat die Briefwahl sogar eine systemrelevante Bedeutung bekommen.<br /><br />
 
-Es gibt weitere gute Gründe, warum Bürger:innen am Tag der Wahl nicht wählen gehen, obwohl sie das grundsätzlich möchten. Wir glauben, dass die Briefwahl für alle eine gute Möglichkeit ist, unkompliziert und rechtzeitig im Voraus zu wählen - jederzeit, von überall und kostenfrei. Mit der Corona-Pandemie hat die Briefwahl sogar eine systemrelevante Bedeutung bekommen.<br /><br />
-
-<b>Viele Menschen wissen nicht, wie einfach es ist, online die Briefwahl zu beantragen.</b> <br />wahlbrief hilft bei der Erstellung des Antrags auf Briefwahl, prüft auf Vollständigkeit und ermittelt die Adresse des zuständigen Amts anhand der Meldeanschrift. Der Antragstext kann dann per E-Mail ans Wahlamt des Hauptwohnsitzes gesendet werden. Wir speichern und übertragen dabei keine persönlichen Daten, die E-Mail wird aus dem eigenen E-Mail-Programm versendet."
+      <b>Viele Menschen wissen nicht, wie einfach es ist, online die Briefwahl zu beantragen.</b> <br />wahlbrief hilft bei der Erstellung des Antrags auf Briefwahl, prüft auf Vollständigkeit und ermittelt die Adresse des zuständigen Amts anhand der Meldeanschrift. Der Antragstext kann dann per E-Mail ans Wahlamt des Hauptwohnsitzes gesendet werden. Wir speichern und übertragen dabei keine persönlichen Daten, die E-Mail wird aus dem eigenen E-Mail-Programm versendet."
 donate:
   left:
     title: "Spenden"
-    subtitle: "Wahlbrief.de ist ein Projekt von <a href='https://www.mehr-demokratie.de/' target='_blank'>Mehr Demokratie e.V.</a> zur Bundestagswahl 2025. <br/><br/> Ihre Spende bildet das Fundament unserer Arbeit. Bitte unterstützen Sie uns, damit wir auch weiterhin für demokratische Teilhabe und eine starke Demokratie einstehen können."
+    subtitle: "Wahlbrief.de ist ein Projekt von <a href='https://fragdenstaat.de/' target='_blank'>FragDenStaat</a> zu den Landtagswahlen 2026. <br/><br/> Ihre Spende bildet das Fundament unserer Arbeit. Bitte unterstützen Sie uns, damit wir auch weiterhin für demokratische Teilhabe und eine starke Demokratie einstehen können."
     text: ""
+nav:
+  close: "Schließen"

@@ -2,8 +2,18 @@ listid: "3"
 listsub: "2"
 left:
   title: "Apply for postal vote now"
-  subtitle:
-    "The German federal parliament elections takes place on 23 February. Votes can be cast in advance by postal vote. It only takes 2 minutes to apply for the required documents by email.<br /><br /><b>Mail your voted ballot before 20 February or drop off your ballot at the election office until Sunday 6pm.</b><br /><br /><small>The documents are delivered within few days. Please note that due to the election's short notice, it is crucial to apply for postal election as soon as possible.</small>"
+  subtitle: |
+    <p>These elections will still take place in 2026:</p>
+    <ul>
+    <li>On 8 March 2026, there will be state elections in Baden-Württemberg.</li
+    <li>On 22 March 2026, there will be state elections in Rhineland-Palatinate.</li>
+    </ul>
+    <p>
+    Votes can be cast in advance by postal vote. It only takes 2 minutes to apply for the required documents by email.
+    <br /><br />
+    <!-- <b>Mail your voted ballot before 20 February or drop off your ballot at the election office until Sunday 6pm.</b>
+    <br /><br />  -->
+    <small>The documents are delivered within few days.</small>"
   preview: "Preview: Postal vote application"
   home: "Home"
   about: "About"
@@ -77,7 +87,7 @@ right:
     second: "2) Set the following as subject:"
     third: "3) Delete these instructions and keep the text below."
   letter:
-    title: "Sehr geehrte Damen und Herren,<br /><br />hiermit beantrage ich die Zusendung der Briefwahlunterlagen für die Bundestagswahl 2025. Bitte senden Sie mir, falls möglich, englische Unterlagen zu."
+    title: "Sehr geehrte Damen und Herren,<br /><br />hiermit beantrage ich die Zusendung der Briefwahlunterlagen für die Landtagswahl 2026. Bitte senden Sie mir, falls möglich, englische Unterlagen zu."
     name: "Vorname"
     surname: "Nachname"
     birthday: "Geburtsdatum"
@@ -91,7 +101,6 @@ right:
       subject: "Apply now for a postal vote for the German federal parliament election: Every vote counts!"
       body: "Hello!%0D%0A%0D%0AI have just applied online for the postal voting documents for the Bundestag election.%0D%0A It's totally quick and easy: https://wahlbrief.de/%0D%0A%0D%0ABest Regards,%0D%0A"
     facebook: "I've just applied for postal voting documents for the German federal parliament election.%0D%0AAre you in too? Every vote counts.%0D%0Ahttps://wahlbrief.de/"
-    twitter: "I've just applied for postal voting for the German federal election.%0D%0AAre you in too? Every vote counts.%0D%0A@wahlbrief https://wahlbrief.de/"
     bluesky: "I've just applied for postal voting for the German federal election.%0D%0AAre you in too? Every vote counts.%0D%0A@mehrdemokratie.bsky.social https://wahlbrief.de/"
     linkedin: "I've just applied for postal voting for the German federal election.%0D%0AAre you in too? Every vote counts.%0D%0Ahttps://wahlbrief.de/"
     telegram: "I've just applied for postal voting for the German federal election.%0D%0ABare you in too? Every vote counts."
@@ -126,54 +135,56 @@ questions:
   - title: "Can I also post the ballot paper directly at the electoral office?"
     answer: "This is possible and makes sense if the absentee ballot papers are only filled in the day before or on the day of the election. The letter must be received by the electoral office by the time the polling stations close."
   - title: "What happens after I apply for an absentee ballot?"
-    answer: "The postal voting documents will be sent to the address provided within a few working days. Instructions on how to fill in the postal voting documents are available on the <a href='https://www.bundeswahlleiterin.de/bundestagswahlen/2025/informationen-waehler/briefwahl.html#2308ae86-bd0f-44e6-ac5e-4116ece45785'>website of the Federal Election Commissioner</a>."
+    answer: "The postal voting documents will be sent to the address provided within a few working days."
 imprint:
   left:
     title: "Imprint"
-    subtitle: "wahlbrief is a project run by Mehr Demokratie e.V. for the German federal election 2025."
+    subtitle: "wahlbrief is a project run by FragDenStaat for the German federal election 2025."
   right:
     title: "Imprint"
-    text: "
-<b>Information according to § 5 TMG:</b><br />
-Mehr Demokratie e.V.<br />
-House of Democracy and Human Rights<br />
-Greifswalder Str. 4<br />
-10405 Berlin<br />
-<br />
-<b>Responsible for the content according to § 55 para. 2 RStV:</b><br />
-Juris Vetra. <a href='mailto:juris@wahlbrief.de'>Send email</a><br />
-<br />
-<b>Concept and realisation:</b><br />
-Juris Vetra, Johann-Friedrich Salzmann<br />
-<br />
-<b>Contact:</b><br />
-Support, technical issues: <a href='mailto:contact@wahlbrief.de'>Send email</a><br />
-Project-related enquiries: <a href='mailto:wahlbuero@wahlbrief.de'>Send email</a><br />
-Press enquiries: <a href='mailto:presse@mehr-demokratie.de'>Send email</a><br />
-<br />
-<b>Privacy:</b><br />
-Data protection and privacy: <a href='/terms.html'>Privacy Policy</a>
-"
+    text: |
+      <b>Information according to § 5 TMG:</b><br />
+      Open Knowledge Foundation Deutschland e.V.<br />
+      FragDenStaat<br />
+      Singerstr. 109<br />
+      10179 Berlin<br />
+      https://okfn.de<br />
+      Fax: +49-30-85102320<br />
+      <br />
+      Registered at Amtsgericht Charlottenburg, VR 30468 B.<br />
+      Board representatives: Kristina Klein, Felix Reda, Lea Gimpel, Gabriele C. Klug, Stefan Heumann, Elina Eickstädt, Fiona Krakenbürger. Responnsible for content regarding § 5 DDG, § 18 MStV: Arne Semsrott<br />
+      <br />
+      <b>Concept and realisation:</b><br />
+      Juris Vetra, Johann-Friedrich Salzmann<br />
+      <br />
+      <b>Contact:</b><br />
+      Project-related enquiries: <a href='mailto:info@fragdenstaat.de.de'>Send email</a><br />
+      Press enquiries: <a href='mailto:presse@fragdenstaat.de'>Send email</a><br />
+      <br />
+      <b>Privacy:</b><br />
+      Data protection and privacy: <a href='/terms.html'>Privacy Policy</a>
     button: "Contact us"
 about:
   left:
     title: "About the project"
-    subtitle: "wahlbrief is a project run by Mehr Demokratie e.V. for the 2025 federal election. We want as many people as possible to take part in the election. <br /><br />There are many cases where postal voting is the easiest and most convenient way to vote. We help to apply for postal voting documents online from the relevant election office within 2 minutes.<br /><br /><br />
-<small><i>Mehr Demokratie e.V. is a non-partisan, non-profit association that campaigns for more direct democracy and citizen participation.
-
-<br /><br />Concept and realisation: Juris Vetra, Johann-Friedrich Salzmann<br />
-</small></i>"
+    subtitle: |
+      wahlbrief is a project run by FragDenStaat for the 2026 state elections. We want as many people as possible to take part in the elections. <br /><br />There are many cases where postal voting is the easiest and most convenient way to vote. We help to apply for postal voting documents online from the relevant election office within 2 minutes.<br /><br /><br />
+      <small><i>FragDenStaat is a project of the Open Knowledge Foundation Deutschland e.V., a non-partisan, non-profit association that campaigns for more participation.
+      <br /><br />Concept and realisation: Juris Vetra, Johann-Friedrich Salzmann<br />
+      </small></i>
   right:
     title: "Every vote counts."
-    text: "A strong democracy thrives on a high voter turnout. In Germany, this is usually between 60 and 80 percent: this means that many millions of citizens do not vote on which member of parliament represents them in parliament and which party they want to be governed by. We are committed to ensuring that more people who are eligible to vote do so, and that the hurdles for doing so are as low as possible.<br /><br />
+    text: |
+      A strong democracy thrives on a high voter turnout. In Germany, this is usually between 60 and 80 percent: this means that many millions of citizens do not vote on which member of parliament represents them in parliament and which party they want to be governed by. We are committed to ensuring that more people who are eligible to vote do so, and that the hurdles for doing so are as low as possible.<br /><br />
+      Elections in Germany usually take place on Sundays. Eligible voters can cast their vote between 8am and 6pm at an assigned polling station at their main residence. For some people this is not possible due to work or other commitments, others are out of town or ill on the election date. <br /><br />
 
-Elections in Germany usually take place on Sundays. Eligible voters can cast their vote between 8am and 6pm at an assigned polling station at their main residence. For some people this is not possible due to work or other commitments, others are out of town or ill on the election date. <br /><br />
+      There are other good reasons why citizens do not vote on the day of the election, even though they would like to do so in principle. We believe that postal voting is a good way for everyone to vote easily and in good time in advance - at any time, from anywhere and free of charge. With the Corona pandemic, postal voting has become even more systemically important.<br /><br />
 
-There are other good reasons why citizens do not vote on the day of the election, even though they would like to do so in principle. We believe that postal voting is a good way for everyone to vote easily and in good time in advance - at any time, from anywhere and free of charge. With the Corona pandemic, postal voting has become even more systemically important.<br /><br />
-
-<b>Many people do not know how easy it is to apply online for an absentee ballot.</b> <br />wahlbrief helps to prepare the application for an absentee ballot, checks for completeness and determines the address of the responsible office based on the registration address. The application text can then be sent by e-mail to the electoral office of the main place of residence. We do not store or transmit any personal data in the process; the e-mail is sent from your own e-mail programme."
+      <b>Many people do not know how easy it is to apply online for an absentee ballot.</b> <br />wahlbrief helps to prepare the application for an absentee ballot, checks for completeness and determines the address of the responsible office based on the registration address. The application text can then be sent by e-mail to the electoral office of the main place of residence. We do not store or transmit any personal data in the process; the e-mail is sent from your own e-mail programme.
 donate:
   left:
     title: "Donate"
-    subtitle: "Wahlbrief.de is a service provided by Mehr Demokratie. Your donation forms the foundation of our work. Please support us so that we can continue to stand up for democratic participation and a strong democracy."
+    subtitle: "Wahlbrief.de is a service provided by FragDenStaat. Your donation forms the foundation of our work. Please support us so that we can continue to stand up for democratic participation and a strong democracy."
     text: ""
+nav:
+  close: "Close"
