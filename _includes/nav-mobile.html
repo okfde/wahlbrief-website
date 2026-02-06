@@ -20,7 +20,7 @@
                         <li><a class="dropdown-item" href="{{ page.url | replace:'index.html','' }}">{{ lang_name }}</a>
                         </li>
                         {% else %}
-                        <li><a class="dropdown-item" href="/{{ lang }}{{ page.url | replace:'index.html','' }}">{{
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/{{ lang }}{{ page.url | replace:'index.html','' }}">{{
                                 lang_name }}</a></li>
                         {% endif %}
                         {% endfor %}

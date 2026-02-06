@@ -34,7 +34,7 @@ layout: default
                                         {% if lang == site.default_lang %}
                                         <li><a class="dropdown-item" href="{{ page.url }}">{{ lang_name }}</a></li>
                                         {% else %}
-                                        <li><a class="dropdown-item" href="/{{ lang }}{{ page.url }}">{{ lang_name
+                                        <li><a class="dropdown-item" href="{{ site.baseurl }}/{{ lang }}{{ page.url }}">{{ lang_name
                                                 }}</a></li>
                                         {% endif %}
                                         {% endfor %}
@@ -60,7 +60,7 @@ layout: default
                                         {% if lang == site.default_lang %}
                                         <li><a class="dropdown-item" href="{{ page.url | replace:'index.html','' }}">{{ lang_name }}</a></li>
                                         {% else %}
-                                        <li><a class="dropdown-item" href="/{{ lang }}{{ page.url | replace:'index.html','' }}">{{ lang_name
+                                        <li><a class="dropdown-item" href="{{ site.baseurl }}/{{ lang }}{{ page.url | replace:'index.html','' }}">{{ lang_name
                                                 }}</a></li>
                                         {% endif %}
                                         {% endfor %}
