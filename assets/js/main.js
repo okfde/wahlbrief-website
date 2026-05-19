@@ -196,7 +196,8 @@ const elements = {
   copier: document.getElementById("copy-text"),
   email: document.getElementById("email"),
   newsletter: document.getElementById("email-newsletter"),
-  mainform: document.getElementById("main-form")
+  mainform: document.getElementById("main-form"),
+  sendemail: document.getElementById("send-email")
 };
 
 const formElements = {
@@ -268,15 +269,17 @@ const identityElements = {
 };
 
 // --- Mailto URL Generation ---
-document.addEventListener("click", (event) => {
-  if (event.target.id === "send-email") {
-    event.preventDefault();
-    event.target.href = generateMailtoUrl();
-    const displayMessage = document.getElementById("final-message");
-    displayMessage.innerHTML = "<i class='fas fa-check-circle me-2'></i>Sent!";
-    displayMessage.classList.add("success");
-    window.location.href = event.target.href;
-  }
+elements.sendemail.addEventListener("click", (event) => {
+  _paq.push(['trackGoal', 3]);
+  
+  event.target.href = generateMailtoUrl();
+
+  const displayMessage = document.getElementById("final-message");
+  // Get translated text from the hidden element:
+  const translatedText = getTranslation("translation-sent");
+  displayMessage.innerHTML =
+    "<i class='fas fa-check-circle me-2'></i>" + translatedText;
+  displayMessage.classList.add("success");
 });
 
 // --- Clipboard Functionality ---
@@ -550,6 +553,7 @@ function secondpage() {
 
   if (data.zip.length >= 5 && is_valid_datalist_value(data.zip, data.city)) {
     navigateTo(2);
+    _paq.push(['trackGoal', 1]);
   }
 }
 
@@ -758,22 +762,6 @@ elements.searchInput?.addEventListener("keyup", (e) => {
   }, 50);
 });
 
-// --- Event Delegation for Mailto Link ---
-document.addEventListener("click", (event) => {
-  if (event.target.id === "send-email") {
-    event.preventDefault();
-    event.target.href = generateMailtoUrl();
-    const displayMessage = document.getElementById("final-message");
-
-    // Get translated text from the hidden element:
-    const translatedText = getTranslation("translation-sent");
-
-    displayMessage.innerHTML =
-      "<i class='fas fa-check-circle me-2'></i>" + translatedText;
-    displayMessage.classList.add("success");
-  }
-});
-
 if (elements.copier) {
   elements.copier.addEventListener("click", (event) => {
     const displayMessage = document.getElementById("final-message");
@@ -973,5 +961,23 @@ if (elements.mainform) {
     }
     sendEmailRequest()
     thirdpage()
+    _paq.push(['trackGoal', 2]);
   })
 }
+
+var _paq = window._paq = window._paq || [];
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+  var u="https://traffic.okfn.de/";
+  _paq.push(['setTrackerUrl', u+'matomo.php']);
+  _paq.push(['setDomains', [document.location.host]])
+  _paq.push(['disableCookies'])
+  _paq.push(['disableBrowserFeatureDetection'])
+
+  _paq.push(['setSiteId', '61']);
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+})();

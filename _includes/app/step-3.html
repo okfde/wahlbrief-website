@@ -16,9 +16,10 @@
 
         <div class="row py-4 justify-content-center align-items-center">
             <div class="col-12 col-lg-6 mb-3 mb-lg-0">
-                <a id="send-email" href="#" class="btn-send">
+                <a id="send-email" href="#" class="btn-send" target="mailto">
                     <i class="fas fa-paper-plane me-2"></i>{% t right.send %}
                 </a>
+                <iframe name="mailto" src="about:blank" style="display:none;"></iframe>
             </div>
             <div class="col-12 col-lg-6">
                 <button id="copy-text" class="btn-copy copy"
