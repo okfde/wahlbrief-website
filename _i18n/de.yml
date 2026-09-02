@@ -190,3 +190,24 @@ donate:
     text: ""
 nav:
   close: "Schließen"
+sachsen_anhalt:
+  campaign:
+    title: "Jetzt<br>Briefwahl<br>beantragen"
+    kicker: "Landtagswahl<br>am 6. September<br>in Sachsen-Anhalt"
+  step_1:
+    description_1: "Wir benötigen zunächst die Postleitzahl der Meldeadresse."
+    description_2: "Zuständig für den Briefwahl-Antrag ist meist das Bürgeramt am Hauptwohnsitz."
+    privacy_intro: "Wir übertragen und speichern Ihre Daten nur auf ausdrücklichen Wunsch. Siehe auch unsere"
+    privacy: "Wir übertragen und speichern Ihre Daten nur auf ausdrücklichen Wunsch. Siehe auch unsere <a href='/terms.html' target='_blank'>Datenschutzbestimmungen</a>."
+  share_cta:
+    title: "Wähl einfach"
+    text_1: "Viele Menschen wissen nicht, wie unkompliziert und schnell die Briefwahl funktioniert."
+    text_2: "<span class='sachsen-share-emphasis'>Jede Stimme zählt</span> - teile jetzt Wahlbrief und hilf, die Information weiterzuverbreiten!"
+  sharing:
+    copy: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl in Sachsen-Anhalt beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0Ahttps://wahlbrief.de/sachsen-anhalt/"
+    email:
+      subject: "Briefwahl beantragen zur Landtagswahl in Sachsen-Anhalt: Jede Stimme zählt!"
+      body: "Hallo!%0D%0A%0D%0AIch habe gerade online die Briefwahlunterlagen zur Landtagswahl in Sachsen-Anhalt beantragt.%0D%0ADas geht total schnell und einfach: https://wahlbrief.de/sachsen-anhalt/"
+    bluesky: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl in Sachsen-Anhalt beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0Ahttps://wahlbrief.de/sachsen-anhalt/"
+    telegram: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl in Sachsen-Anhalt beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt."
+    whatsapp: "Ich habe gerade Briefwahlunterlagen zur Landtagswahl in Sachsen-Anhalt beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt. https://wahlbrief.de/sachsen-anhalt/"

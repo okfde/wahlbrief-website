@@ -4,7 +4,11 @@ layout: default
 
 <div class="container-fluid h-100">
     <div class="row h-100">
-        {% include app/sidebar.html %}
+        {% if page.app_sidebar %}
+            {% include {{ page.app_sidebar }} %}
+        {% else %}
+            {% include app/sidebar.html %}
+        {% endif %}
 
         <div id="right-side" class="col-md-12 col-lg-6">
             <div class="container d-flex flex-column h-100 py-3 py-lg-5 px-2 px-lg-5">
@@ -12,9 +16,23 @@ layout: default
                     {% include app/step-nav.html %}
 
                     <div class="tab-content" id="pills-tabContent">
-                        {% include app/step-1.html %}
-                        {% include app/step-2.html %}
-                        {% include app/step-3.html %}
+                        {% if page.app_step_1 %}
+                            {% include {{ page.app_step_1 }} %}
+                        {% else %}
+                            {% include app/step-1.html %}
+                        {% endif %}
+
+                        {% if page.app_step_2 %}
+                            {% include {{ page.app_step_2 }} %}
+                        {% else %}
+                            {% include app/step-2.html %}
+                        {% endif %}
+
+                        {% if page.app_step_3 %}
+                            {% include {{ page.app_step_3 }} %}
+                        {% else %}
+                            {% include app/step-3.html %}
+                        {% endif %}
 
                         <div class="d-block d-lg-none">
                             {% include footer.html %}

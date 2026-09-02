@@ -34,7 +34,7 @@
     </div>
 
     <div class="overlay-content">
-        <a href="{{ site.baseurl }}/">{% t left.home %}</a>
+        <a href="{% if page.page_class == 'page-sachsen-anhalt' %}https://wahlbrief.de/sachsen-anhalt/{% else %}{{ site.baseurl }}/{% endif %}">{% t left.home %}</a>
         <a href="{{ site.baseurl }}/about.html">{% t left.about %}</a>
         <a href="{{ site.baseurl }}/faq.html">{% t left.faq %}</a>
         <a href="{{ site.donate_url }}">{% t left.donate %}</a>
@@ -55,15 +55,41 @@
 </div>
 
 <script>
+    function setSachsenThemeColor(color) {
+        if (!document.body.classList.contains("page-sachsen-anhalt")) {
+            return;
+        }
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) {
+            themeMeta.setAttribute("content", color);
+        }
+    }
+
     function openNav() {
-        document.getElementById("navbar-mobile").style.height = "100%";
+        var navbarMobile = document.getElementById("navbar-mobile");
+        if (document.activeElement && typeof document.activeElement.blur === "function") {
+            document.activeElement.blur();
+        }
+        if (!navbarMobile) {
+            return;
+        }
+        if (navbarMobile && navbarMobile.parentElement !== document.body) {
+            document.body.appendChild(navbarMobile);
+        }
+        setSachsenThemeColor("#757dc6");
+        navbarMobile.style.height = "100%";
+        document.body.classList.add("mobile-nav-open");
         document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
         document.body.scroll = "no";
     }
 
     function closeNav() {
         document.getElementById("navbar-mobile").style.height = "0%";
-        document.documentElement.style.overflow = 'scroll';
-        document.body.scroll = "yes";
+        document.body.classList.remove("mobile-nav-open");
+        setSachsenThemeColor("#f4e7f5");
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        document.body.scroll = "";
     }
 </script>

@@ -1,0 +1,2477 @@
+---
+---
+
+@font-face {
+  font-family: "Sachsen Switzer";
+  src: url("../fonts/sachsen-anhalt/Switzer-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sachsen Switzer";
+  src: url("../fonts/sachsen-anhalt/Switzer-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sachsen Switzer";
+  src: url("../fonts/sachsen-anhalt/Switzer-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sachsen Switzer";
+  src: url("../fonts/sachsen-anhalt/Switzer-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sachsen Switzer";
+  src: url("../fonts/sachsen-anhalt/Switzer-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sachsen Switzer";
+  src: url("../fonts/sachsen-anhalt/Switzer-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sachsen Switzer";
+  src: url("../fonts/sachsen-anhalt/Switzer-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sachsen Zodiak";
+  src: url("../fonts/sachsen-anhalt/Zodiak-Extrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+.page-sachsen-anhalt {
+  --sachsen-campaign-bg: #757dc6;
+  --sachsen-campaign-ink: #fff2f8;
+  --sachsen-campaign-highlight: #e3ff63;
+  --sachsen-action-blue: #0062f2;
+  --sachsen-page-bg: #f4e7f5;
+  --sachsen-copy-size: clamp(0.82rem, #{"0.1vw + 0.78rem"}, 0.95rem);
+  --sachsen-copy-line-height: 1.32;
+
+  background-color: var(--sachsen-page-bg);
+  color: #07133e;
+  font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+  font-weight: 300;
+
+  #left-side,
+  #right-side {
+    background-color: var(--sachsen-page-bg);
+  }
+
+  #left-side.pattern {
+    background-image: none;
+  }
+
+  #left-side {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .sachsen-sidebar {
+    max-width: none;
+    position: relative;
+    padding: 1.25rem !important;
+  }
+
+  .sachsen-landing-frame,
+  .sachsen-preview-panel,
+  .sachsen-share-cta,
+  .sachsen-outro-panel {
+    position: relative;
+    z-index: 1;
+  }
+
+  .sachsen-outro-panel {
+    display: none !important;
+  }
+
+  .sachsen-landing-frame {
+    --sachsen-panel-x: 5rem;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: calc(100vh - 2.5rem);
+    padding: 3.6rem var(--sachsen-panel-x) 3rem;
+    border-radius: 32px;
+    background-color: var(--sachsen-campaign-bg);
+  }
+
+  .sachsen-landing-frame .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .sachsen-landing-frame .row > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .sachsen-landing-frame > .row:first-child .navbar {
+    justify-content: flex-start !important;
+    text-align: left;
+  }
+
+  .sachsen-landing-frame > .row:first-child .logos {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.85rem;
+    margin-left: 0;
+  }
+
+  .sachsen-landing-frame > .row:first-child .logos img {
+    max-height: 2.2rem;
+  }
+
+  .sachsen-landing-frame > .row:first-child .logos .logo:last-child {
+    order: 1;
+    width: 9.55rem;
+    height: 2.2rem;
+    background-color: var(--sachsen-campaign-ink);
+    -webkit-mask: url("../images/wahlbrief.svg") no-repeat left center / contain;
+    mask: url("../images/wahlbrief.svg") no-repeat left center / contain;
+  }
+
+  .sachsen-landing-frame > .row:first-child .logos .logo:last-child img {
+    opacity: 0;
+  }
+
+  #intro {
+    margin-top: 8vh;
+    padding: 0;
+  }
+
+  .campaign-title {
+    max-width: 48rem;
+    margin-bottom: 2.4rem;
+    color: var(--sachsen-campaign-highlight);
+    font-family: "Sachsen Zodiak", "Baskervville", Georgia, serif;
+    font-size: clamp(3.64rem, #{"3.12vw + 1.28rem"}, 5.98rem);
+    font-weight: 800;
+    line-height: 0.9;
+    -webkit-text-stroke: 0.012em currentColor;
+    text-transform: uppercase;
+  }
+
+  .campaign-kicker {
+    max-width: 34rem;
+    margin-bottom: 0;
+    color: var(--sachsen-campaign-highlight);
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(1.82rem, #{"1.56vw + 0.64rem"}, 3rem);
+    font-weight: 300;
+    line-height: 0.96;
+    text-transform: uppercase;
+  }
+
+  .sachsen-preview-panel {
+    display: none;
+    margin: 0;
+    padding: 0;
+    color: #07133e;
+    font-size: var(--sachsen-copy-size);
+    line-height: var(--sachsen-copy-line-height);
+  }
+
+  .sachsen-preview-card {
+    display: grid;
+    gap: 0.95rem;
+    margin-bottom: 0.95rem;
+    padding: 1.6rem 3rem;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.58);
+    box-shadow: 0 0.125rem 0.375rem rgba(7, 19, 62, 0.06);
+  }
+
+  .sachsen-preview-card h4 {
+    color: #07133e;
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(1rem, #{"0.7vw + 0.74rem"}, 1.5rem);
+    font-weight: 600 !important;
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+
+  .sachsen-municipality-card {
+    display: block;
+    margin-bottom: 0.85rem;
+    padding: 1.4rem 3rem;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.58);
+    box-shadow: 0 0.125rem 0.375rem rgba(7, 19, 62, 0.06);
+  }
+
+  .sachsen-municipality-card h5,
+  .sachsen-municipality-card p,
+  .sachsen-municipality-card button {
+    color: #07133e;
+    font-size: var(--sachsen-copy-size);
+    line-height: var(--sachsen-copy-line-height);
+  }
+
+  .sachsen-letter-card {
+    min-height: calc(100vh - 15rem);
+    padding: 3rem 3rem 2rem;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.58);
+    overflow: hidden;
+  }
+
+  .sachsen-letter-card p,
+  .sachsen-letter-card span {
+    font-size: var(--sachsen-copy-size);
+    line-height: var(--sachsen-copy-line-height);
+  }
+
+  .sachsen-final-preview-panel #final-letter {
+    padding: 0 !important;
+    border: 0;
+    border-radius: 0;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none;
+  }
+
+  .sachsen-final-preview-panel #instructions {
+    margin-bottom: 1.5rem;
+  }
+
+  .sachsen-share-cta {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: calc(100vh - 6rem);
+    margin: 0;
+    padding: 0 2.5rem 3rem;
+    border-radius: 32px;
+    background-color: var(--sachsen-campaign-bg);
+    color: var(--sachsen-campaign-highlight);
+    overflow: hidden;
+  }
+
+  .sachsen-share-primary {
+    width: calc(100% + 5rem);
+    min-height: 60%;
+    margin: 0 -2.5rem;
+    padding: clamp(3.18rem, #{"0.45vw + 2.86rem"}, 3.55rem) 2.5rem clamp(1.03rem, #{"0.57vw + 0.72rem"}, 1.52rem);
+    border-radius: 32px;
+    background-color: var(--sachsen-campaign-bg);
+    box-shadow: 0 1rem 1.75rem rgba(39, 35, 95, 0.3);
+  }
+
+  .sachsen-share-cta h2 {
+    max-width: 48rem;
+    margin: 0 0 1.75rem;
+    color: var(--sachsen-campaign-highlight);
+    font-family: "Sachsen Zodiak", "Baskervville", Georgia, serif;
+    font-size: clamp(3.11rem, #{"2.6vw + 1.14rem"}, 5.1rem);
+    font-weight: 800;
+    line-height: 0.86;
+    -webkit-text-stroke: 0.012em currentColor;
+    text-transform: uppercase;
+  }
+
+  .sachsen-share-cta p {
+    max-width: 34rem;
+    margin: 0 0 0.75rem;
+    color: var(--sachsen-campaign-highlight);
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(1.18rem, #{"0.72vw + 0.72rem"}, 1.78rem);
+    font-weight: 300;
+    line-height: 0.98;
+  }
+
+  .sachsen-share-cta p:last-child {
+    margin-bottom: 0;
+  }
+
+  .sachsen-share-emphasis {
+    font-weight: 600;
+  }
+
+  .sachsen-share-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.46rem, #{"0.34vw + 0.28rem"}, 0.72rem);
+    max-width: 36rem;
+    margin: clamp(1.75rem, #{"1vw + 0.9rem"}, 2.55rem) 0 clamp(1.25rem, #{"0.8vw + 0.76rem"}, 2rem);
+  }
+
+  .sachsen-share-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(2.25rem, #{"0.84vw + 1.7rem"}, 2.95rem);
+    height: clamp(2.25rem, #{"0.84vw + 1.7rem"}, 2.95rem);
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--sachsen-campaign-ink);
+    font-size: clamp(1.14rem, #{"0.5vw + 0.82rem"}, 1.5rem);
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .sachsen-share-actions a:hover,
+  .sachsen-share-actions a:focus {
+    color: var(--sachsen-campaign-ink);
+    background-color: transparent;
+  }
+
+  .sachsen-share-donate {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, #{"0.9vw + 0.45rem"}, 1.8rem);
+    max-width: 38rem;
+    margin-top: clamp(4.65rem, #{"2.42vw + 1.85rem"}, 6.6rem);
+    margin-bottom: 0;
+  }
+
+  .sachsen-share-donate-text {
+    flex: 1 1 0;
+    max-width: 26rem;
+    margin: 0 !important;
+    color: var(--sachsen-campaign-ink) !important;
+    font-size: clamp(1rem, #{"0.52vw + 0.66rem"}, 1.42rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .sachsen-share-donate-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    min-height: clamp(2.5rem, #{"0.6vw + 2rem"}, 3rem);
+    padding: 0.66rem 1.35rem;
+    border-radius: 10px;
+    background-color: var(--sachsen-campaign-ink);
+    color: var(--sachsen-campaign-bg);
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(0.9rem, #{"0.26vw + 0.75rem"}, 1.08rem);
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .sachsen-share-donate-button:hover,
+  .sachsen-share-donate-button:focus {
+    color: var(--sachsen-campaign-bg);
+    background-color: var(--sachsen-campaign-ink);
+  }
+
+  .sachsen-share-footer {
+    width: 100%;
+    margin-top: auto;
+    padding-top: clamp(1.6rem, #{"1.1vw + 0.85rem"}, 2.35rem);
+  }
+
+  .sachsen-share-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(0.55rem, #{"0.48vw + 0.28rem"}, 0.92rem);
+    margin-top: 0;
+    color: var(--sachsen-campaign-ink);
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(0.72rem, #{"0.12vw + 0.66rem"}, 0.86rem);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .sachsen-share-nav a {
+    color: var(--sachsen-campaign-ink);
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: underline;
+  }
+
+  .sachsen-share-nav i {
+    font-size: 1.28em;
+    line-height: 1;
+  }
+
+  .sachsen-share-legal {
+    max-width: 100%;
+    margin-top: clamp(0.7rem, #{"0.5vw + 0.42rem"}, 1.1rem);
+    color: var(--sachsen-campaign-ink);
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(0.68rem, #{"0.06vw + 0.64rem"}, 0.76rem);
+    line-height: 0.95;
+  }
+
+  .sachsen-share-legal p,
+  .sachsen-share-legal small,
+  .sachsen-share-legal a {
+    color: var(--sachsen-campaign-ink);
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .sachsen-share-legal a {
+    text-decoration: underline;
+  }
+
+  .sachsen-outro-panel {
+    padding: 3rem;
+    border-radius: 32px;
+    background-color: #ff8ab1;
+  }
+
+  .sachsen-footer-row {
+    align-self: flex-start;
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    max-width: 100%;
+    padding: 0;
+    color: #fae8ef;
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(0.68rem, #{"0.06vw + 0.64rem"}, 0.76rem);
+    line-height: 0.95;
+    text-align: left;
+  }
+
+  .sachsen-footer-row .row {
+    justify-content: flex-start !important;
+    gap: 0.23rem;
+  }
+
+  .sachsen-footer-row .row > [class*="col-"] {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    margin-bottom: 0 !important;
+  }
+
+  .sachsen-footer-row .pages,
+  .sachsen-footer-row .social-links {
+    justify-content: flex-start !important;
+  }
+
+  .sachsen-footer-row .pages {
+    gap: 1rem;
+    line-height: 0.48;
+  }
+
+  .sachsen-footer-row .pages a {
+    margin-right: 0 !important;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  .sachsen-footer-row .social-links {
+    gap: 0.55rem;
+    margin-left: clamp(0.45rem, #{"0.7vw + 0.1rem"}, 0.85rem);
+    line-height: 0.48;
+  }
+
+  .sachsen-footer-row .social-links a {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    font-size: 0.95rem;
+  }
+
+  .sachsen-footer-row p,
+  .sachsen-footer-row small {
+    white-space: nowrap;
+    font-size: inherit;
+    line-height: 0.48;
+  }
+
+  #right-side {
+    color: #07133e;
+  }
+
+  #right-side > .container {
+    justify-content: center;
+    padding-right: clamp(2rem, 3.2vw, 4rem) !important;
+    padding-left: clamp(2rem, 3.2vw, 4rem) !important;
+  }
+
+  #step-1 {
+    position: relative;
+  }
+
+  #step-1 h4,
+  #step-2 h4,
+  #step-3 h4 {
+    color: #07133e;
+    font-size: clamp(1rem, #{"0.35vw + 0.78rem"}, 1.25rem);
+    font-weight: 400 !important;
+  }
+
+  #step-1 .sachsen-step-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    color: #07133e;
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    text-align: left;
+  }
+
+  #step-1 .sachsen-step-header h4 {
+    position: static;
+  }
+
+  #step-1 .sachsen-language-switcher .dropdown-toggle {
+    color: #07133e;
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(0.8rem, #{"0.16vw + 0.72rem"}, 0.95rem);
+  }
+
+  #step-1 .sachsen-language-switcher {
+    width: fit-content;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  #step-1 .sachsen-language-switcher .dropdown-menu,
+  #step-1 .sachsen-language-switcher .dropdown-item {
+    color: #07133e;
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+
+  #step-1 h2,
+  #step-2 h2,
+  #step-3 h2,
+  #step-3 #preview h2.fs-3 {
+    max-width: 32rem;
+    margin-bottom: 1.15rem;
+    color: #07133e;
+    font-size: clamp(2.1rem, #{"1.5vw + 1.05rem"}, 3.3rem) !important;
+    font-weight: 400 !important;
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+
+  #step-1 p,
+  #step-2 p,
+  #step-3 p,
+  #step-2 legend,
+  #step-3 legend,
+  #step-2 label,
+  #step-3 label {
+    color: #07133e;
+    font-size: clamp(0.75rem, #{"0.08vw + 0.7rem"}, 0.82rem);
+    font-weight: 300;
+    line-height: 1.25;
+  }
+
+  #step-1 p {
+    font-size: var(--sachsen-copy-size);
+    line-height: var(--sachsen-copy-line-height);
+  }
+
+  .sachsen-step-1-description p {
+    margin-bottom: 0.75rem;
+  }
+
+  .sachsen-step-1-description p:last-child,
+  .sachsen-step-1-meta p:last-child {
+    margin-bottom: 0;
+  }
+
+  .sachsen-step-1-meta p {
+    margin-bottom: 0.45rem;
+  }
+
+  .sachsen-step-legal {
+    margin-top: 1.05rem;
+    margin-bottom: 1.25rem;
+    color: #07133e;
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(0.68rem, #{"0.06vw + 0.64rem"}, 0.76rem);
+    font-weight: 300;
+    line-height: 1.25;
+  }
+
+  .sachsen-step-legal p,
+  .sachsen-step-legal small {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .sachsen-step-legal p {
+    margin-bottom: 0;
+  }
+
+  .sachsen-step-legal a {
+    color: #6a8198;
+    text-decoration: underline;
+  }
+
+  .sachsen-step-legal a:hover,
+  .sachsen-step-legal a:focus {
+    color: #4e6379;
+  }
+
+  #step-2 p,
+  #step-2 .form-check-label,
+  #step-3 p,
+  #step-3 label {
+    font-size: var(--sachsen-copy-size);
+    line-height: var(--sachsen-copy-line-height);
+  }
+
+  #step-2 small,
+  #step-3 small,
+  #step-1 .col-xl-10 > p small {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  #step-2 .sachsen-step-legal,
+  #step-3 .sachsen-step-legal,
+  #step-2 .sachsen-step-legal p,
+  #step-3 .sachsen-step-legal p,
+  #step-2 .sachsen-step-legal small,
+  #step-3 .sachsen-step-legal small,
+  #step-2 .sachsen-step-legal a,
+  #step-3 .sachsen-step-legal a {
+    font-size: clamp(0.68rem, #{"0.06vw + 0.64rem"}, 0.76rem);
+    line-height: 0.95;
+  }
+
+  #step-2 #address-desktop > p,
+  #step-3 #preview > p {
+    margin-bottom: 2rem;
+  }
+
+  #step-2 .sachsen-step-copy {
+    margin-bottom: 0;
+  }
+
+  #step-2 .sachsen-step-copy small {
+    display: block;
+    margin-top: 1rem;
+    font-style: italic;
+    font-weight: 300 !important;
+  }
+
+  #step-2 #newform h3 {
+    color: #07133e;
+    font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    font-size: clamp(1.3rem, #{"2.4vw + 0.82rem"}, 1.7rem) !important;
+    font-weight: 400 !important;
+    line-height: 1.05;
+  }
+
+  #step-1 .col-xl-10 {
+    position: relative;
+    width: 100%;
+    max-width: 38rem;
+    margin-top: 3.25rem;
+  }
+
+  #step-1 .input-group.form-floating {
+    border: 1px solid rgba(7, 19, 62, 0.14);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 0.125rem 0.375rem rgba(7, 19, 62, 0.06);
+    overflow: hidden;
+  }
+
+  #step-1 .input-group.form-floating:focus-within {
+    box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue),
+      0 0.125rem 0.375rem rgba(7, 19, 62, 0.06);
+  }
+
+  #step-1 .input-group.form-floating:has(input:valid:not(:placeholder-shown)) {
+    border-color: #D1F24E;
+    background-color: rgba(255, 255, 255, 0.78);
+    box-shadow: inset 0 0 0 0.15rem #D1F24E,
+      0 0.125rem 0.375rem rgba(7, 19, 62, 0.06);
+  }
+
+  #step-1 input[type="text"] {
+    min-height: 4.2rem;
+    border: 0 !important;
+    border-radius: 20px 0 0 20px;
+    background-color: transparent;
+    color: #07133e;
+    font-size: 0.9rem;
+    font-weight: 300;
+    box-shadow: none !important;
+    outline: none;
+  }
+
+  #step-1 input[type="text"]:valid:not(:placeholder-shown),
+  #step-1 input[type="text"]:valid:focus:not(:placeholder-shown) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  #step-1 .form-floating > label {
+    color: rgba(7, 19, 62, 0.55);
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+
+  #step-1 .input-group-append {
+    display: none !important;
+  }
+
+  #step-1 .btn-new {
+    min-height: 4.2rem;
+    padding: 0.85rem 1.7rem;
+    border-radius: 20px;
+    background-color: var(--sachsen-action-blue);
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  #step-1 .btn-new:hover {
+    background-color: darken(#0062f2, 5%);
+  }
+
+  #step-1 #autocomplete-list {
+    position: absolute;
+    top: calc(4.2rem + 0.4rem);
+    right: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0.5rem 1rem rgba(7, 19, 62, 0.1);
+    overflow: hidden;
+  }
+
+  #step-1 #autocomplete-list div:first-child {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  #step-1 #autocomplete-list div:last-child {
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  #step-1 .mt-5 {
+    margin-top: 2.5rem !important;
+  }
+
+  #step-2 #main-form {
+    margin-top: 2rem !important;
+  }
+
+  #step-2 .background-gray-100,
+  #step-2 #election-hints,
+  #step-3 .background-gray-100,
+  #step-3 #final-message,
+  #step-3 .final-letter {
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.58) !important;
+    color: #07133e;
+  }
+
+  #step-2 input[type="text"],
+  #step-2 input[type="email"],
+  #step-3 input[type="text"],
+  #step-3 input[type="email"] {
+    color: #07133e;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    &:valid:not(:placeholder-shown) {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23D1F24E'%3E%3Cpath d='M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 17.292l-4.5-4.364 1.857-1.858 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.643z'/%3E%3C/svg%3E");
+      background-color: rgba(255, 255, 255, 0.58) !important;
+      box-shadow: inset 0 0 0 0.15rem #D1F24E !important;
+    }
+  }
+
+  #step-1 input[type="text"]:valid:not(:placeholder-shown),
+  #step-1 input[type="text"]:valid:focus:not(:placeholder-shown) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  #step-2 input[type="text"]:valid:not(:placeholder-shown),
+  #step-2 input[type="email"]:valid:not(:placeholder-shown),
+  #step-2 input[type="number"]:valid:not(:placeholder-shown) {
+    border-color: #D1F24E !important;
+    background-color: rgba(255, 255, 255, 0.58) !important;
+    box-shadow: inset 0 0 0 0.15rem #D1F24E !important;
+  }
+
+  #step-2 input[type="text"]:-webkit-autofill,
+  #step-2 input[type="email"]:-webkit-autofill,
+  #step-2 input[type="number"]:-webkit-autofill,
+  #step-2 input[type="text"]:-webkit-autofill:hover,
+  #step-2 input[type="email"]:-webkit-autofill:hover,
+  #step-2 input[type="number"]:-webkit-autofill:hover,
+  #step-2 input[type="text"]:-webkit-autofill:focus,
+  #step-2 input[type="email"]:-webkit-autofill:focus,
+  #step-2 input[type="number"]:-webkit-autofill:focus {
+    -webkit-text-fill-color: #07133e;
+    caret-color: #07133e;
+    transition: background-color 9999s ease-out;
+    box-shadow: inset 0 0 0 1000px #fbf6fb !important;
+  }
+
+  #step-2 input[type="text"]:valid:-webkit-autofill:not(:placeholder-shown),
+  #step-2 input[type="email"]:valid:-webkit-autofill:not(:placeholder-shown),
+  #step-2 input[type="number"]:valid:-webkit-autofill:not(:placeholder-shown) {
+    border-color: #D1F24E !important;
+    box-shadow: inset 0 0 0 0.15rem #D1F24E,
+      inset 0 0 0 1000px #fbf6fb !important;
+  }
+
+  #step-2 .form-control:focus {
+    border-color: var(--sachsen-action-blue) !important;
+    background-color: rgba(255, 255, 255, 0.58) !important;
+    box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue) !important;
+  }
+
+  #step-1 .form-control:focus {
+    border-color: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  #step-2 input[type="text"]:valid:focus:not(:placeholder-shown),
+  #step-2 input[type="email"]:valid:focus:not(:placeholder-shown),
+  #step-2 input[type="number"]:valid:focus:not(:placeholder-shown) {
+    border-color: #D1F24E !important;
+    box-shadow: inset 0 0 0 0.15rem #D1F24E !important;
+  }
+
+  #step-2 input[type="text"]:valid:-webkit-autofill:focus:not(:placeholder-shown),
+  #step-2 input[type="email"]:valid:-webkit-autofill:focus:not(:placeholder-shown),
+  #step-2 input[type="number"]:valid:-webkit-autofill:focus:not(:placeholder-shown) {
+    border-color: #D1F24E !important;
+    box-shadow: inset 0 0 0 0.15rem #D1F24E,
+      inset 0 0 0 1000px #fbf6fb !important;
+  }
+
+  #birthday:has(#form-day:valid:not(:placeholder-shown)):has(#form-month:valid:not(:placeholder-shown)):has(#form-year:valid:not(:placeholder-shown)) {
+    background-color: rgba(255, 255, 255, 0.58) !important;
+    box-shadow: inset 0 0 0 0.15rem #D1F24E !important;
+  }
+
+  @media (min-width: 75rem) {
+    #step-2 .form-control,
+    #step-2 .sachsen-form-block,
+    #step-2 #election-hints {
+      border-radius: 20px;
+    }
+
+    #step-2 #birthday .form-control {
+      border-radius: 16px;
+    }
+  }
+
+  .form-check-input:checked,
+  .tgl-light:checked + .tgl-btn {
+    border-color: #D1F24E;
+    background-color: #D1F24E;
+  }
+
+  .success {
+    color: #07133e !important;
+    background-color: rgba(209, 242, 78, 0.28) !important;
+  }
+
+  .success .fa-check-circle {
+    color: #D1F24E;
+  }
+
+  #step-2 .btn-primary,
+  #step-3 .btn-send,
+  #step-3 .btn-copy {
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  #step-2 .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 1.25rem 0;
+    border-color: var(--sachsen-action-blue);
+    background-color: var(--sachsen-action-blue);
+    color: #ffffff;
+  }
+
+  #step-2 .btn-primary:hover,
+  #step-2 .btn-primary:focus {
+    border-color: darken(#0062f2, 5%);
+    background-color: darken(#0062f2, 5%);
+    color: #ffffff;
+  }
+
+  #step-3 .btn-send {
+    border-color: var(--sachsen-action-blue);
+    background-color: var(--sachsen-action-blue);
+    color: #ffffff;
+  }
+
+  #step-3 .btn-send:hover {
+    border-color: darken(#0062f2, 5%);
+    background-color: darken(#0062f2, 5%);
+    color: #ffffff;
+  }
+
+  #step-3 .btn-copy {
+    background-color: rgba(0, 98, 242, 0.1);
+    color: #07133e;
+  }
+
+  #step-3 .btn-copy:hover {
+    background-color: rgba(0, 98, 242, 0.15);
+    color: #07133e;
+  }
+
+  #left-side .pages a,
+  #left-side .sachsen-footer-row,
+  #left-side .sachsen-footer-row p,
+  #left-side .sachsen-footer-row small,
+  #left-side .sachsen-footer-row a,
+  #left-side footer,
+  #left-side footer a,
+  #left-side .footer,
+  #left-side .footer a {
+    color: var(--sachsen-campaign-ink);
+  }
+
+  #left-side .social-links a {
+    color: var(--sachsen-campaign-ink);
+    background-color: transparent;
+  }
+
+  #left-side .dropdown-toggle {
+    color: var(--sachsen-campaign-highlight);
+  }
+
+  @media (min-width: 75rem) {
+    #left-side,
+    #left-side > .container {
+      height: 100vh;
+      overflow: hidden !important;
+    }
+
+    .sachsen-sidebar {
+      padding: 20px !important;
+    }
+
+    .sachsen-landing-frame {
+      min-height: calc(100vh - 40px);
+      --sachsen-panel-x: 2.5rem;
+      padding: 3rem var(--sachsen-panel-x);
+    }
+
+    #intro {
+      margin-top: clamp(2.75rem, 5vh, 4.25rem);
+    }
+
+    @media (min-width: 87.5rem) {
+      #step-1 .input-group-append {
+        display: flex !important;
+      }
+    }
+
+    #right-side {
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    &:has(#step-1.show) #right-side > .container,
+    &:has(#step-1.active) #right-side > .container {
+      justify-content: center;
+    }
+
+    #step-1 .sachsen-step-header {
+      position: fixed;
+      top: 3rem;
+      left: calc(50vw + clamp(2rem, 3.2vw, 4rem));
+      right: clamp(2rem, 3.2vw, 4rem);
+      z-index: 3;
+    }
+
+    #step-1 .sachsen-step-1-description p {
+      margin-bottom: 0.15rem;
+    }
+
+    #step-1 .sachsen-step-1-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    #step-1 #autocomplete-list {
+      max-height: min(14rem, 31vh);
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    &:has(#step-2.show) #right-side > .container,
+    &:has(#step-2.active) #right-side > .container,
+    &:has(#step-3.show) #right-side > .container,
+    &:has(#step-3.active) #right-side > .container {
+      justify-content: flex-start;
+    }
+
+    &:has(#step-2.show) .sachsen-sidebar,
+    &:has(#step-2.active) .sachsen-sidebar,
+    &:has(#step-3.show) .sachsen-sidebar,
+    &:has(#step-3.active) .sachsen-sidebar {
+      padding: 3rem 20px 20px !important;
+    }
+
+    .sachsen-share-cta {
+      min-height: calc(100vh - 3rem - 20px);
+      padding: 0 2.5rem 3rem;
+    }
+
+    &:has(#step-2.show) .sachsen-letter-card,
+    &:has(#step-2.active) .sachsen-letter-card,
+    &:has(#step-3.show) .sachsen-letter-card,
+    &:has(#step-3.active) .sachsen-letter-card {
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+
+    &:has(#step-2.show) #bigletter,
+    &:has(#step-2.active) #bigletter,
+    &:has(#step-3.show) #finalletter,
+    &:has(#step-3.active) #finalletter {
+      flex-direction: column;
+      height: calc(100vh - 3rem - 20px);
+    }
+
+    &:has(#step-2.show) .sachsen-landing-frame,
+    &:has(#step-2.active) .sachsen-landing-frame,
+    &:has(#step-2.show) .sachsen-footer-row,
+    &:has(#step-2.active) .sachsen-footer-row,
+    &:has(#step-3.show) .sachsen-landing-frame,
+    &:has(#step-3.active) .sachsen-landing-frame,
+    &:has(#step-3.show) .sachsen-footer-row,
+    &:has(#step-3.active) .sachsen-footer-row {
+      display: none;
+    }
+
+    &:has(#step-2.show) #bigletter,
+    &:has(#step-2.active) #bigletter {
+      display: flex !important;
+    }
+
+    &:has(#step-3.show) .sachsen-outro-panel,
+    &:has(#step-3.active) .sachsen-outro-panel {
+      display: none !important;
+    }
+
+    &:has(#step-3.show) #finalletter,
+    &:has(#step-3.active) #finalletter {
+      display: flex !important;
+    }
+
+    &:has(#step-2.show) #finalletter,
+    &:has(#step-2.active) #finalletter,
+    &:has(#step-3.show) #bigletter,
+    &:has(#step-3.active) #bigletter {
+      display: none !important;
+    }
+
+    &.sachsen-share-cta-visible:has(#step-3.show) #finalletter,
+    &.sachsen-share-cta-visible:has(#step-3.active) #finalletter {
+      display: none !important;
+    }
+
+    &.sachsen-share-cta-visible:has(#step-3.show) #sachsen-share-cta,
+    &.sachsen-share-cta-visible:has(#step-3.active) #sachsen-share-cta {
+      display: flex !important;
+    }
+  }
+}
+
+body.page-sachsen-anhalt {
+  background-color: #f4e7f5;
+}
+
+html:has(body.page-sachsen-anhalt.mobile-nav-open),
+body.page-sachsen-anhalt.mobile-nav-open {
+  background-color: var(--sachsen-campaign-bg);
+}
+
+@media (max-width: 74.999rem) {
+  .page-sachsen-anhalt {
+    --sachsen-copy-size: 1.04rem;
+    --sachsen-copy-line-height: 1.34;
+    --sachsen-mobile-gutter: clamp(1rem, #{"3.2vw + 0.25rem"}, 1.5rem);
+    --sachsen-mobile-gap: clamp(0.85rem, #{"1.1vw + 0.55rem"}, 1.15rem);
+    --sachsen-mobile-radius: clamp(18px, 4vw, 24px);
+    --sachsen-control-height: clamp(4.1rem, #{"1.2vw + 3.95rem"}, 4.55rem);
+    --sachsen-text-inset: 5px;
+
+    overflow-x: hidden;
+
+    &,
+    body,
+    html {
+      max-width: 100%;
+    }
+
+    .container-fluid,
+    #left-side,
+    #right-side,
+    #right-side > .container,
+    .tab-content,
+    .tab-pane {
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: hidden;
+    }
+
+    .container-fluid {
+      height: auto !important;
+      min-height: 100vh;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .container-fluid > .row,
+    #right-side > .container > .row,
+    #step-2 #main-form .row,
+    #step-3 .sachsen-actions {
+      width: 100%;
+      max-width: none;
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .container-fluid > .row {
+      display: block;
+    }
+
+    .container-fluid > .row.h-100 {
+      height: auto !important;
+      min-height: 100vh;
+    }
+
+    #left-side,
+    #right-side {
+      flex: 0 0 100%;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      padding-right: 0;
+      padding-left: 0;
+      overflow: visible !important;
+    }
+
+    #left-side > .container {
+      height: auto;
+      overflow: visible !important;
+    }
+
+    #right-side > .container {
+      width: 100%;
+      max-width: 35rem;
+      height: auto !important;
+      min-height: 0;
+      justify-content: flex-start;
+      margin-right: auto;
+      margin-left: auto;
+      padding: calc(0.65rem + 10px) var(--sachsen-mobile-gutter) calc(2rem + 10px) !important;
+      overflow: visible !important;
+    }
+
+    #right-side > .container > .row,
+    .tab-content {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .sachsen-sidebar {
+      width: 100%;
+      max-width: 35rem;
+      margin-right: auto;
+      margin-left: auto;
+      padding: var(--sachsen-mobile-gutter) var(--sachsen-mobile-gutter) 0 !important;
+    }
+
+    .sachsen-landing-frame {
+      min-height: clamp(19.25rem, 52vw, 32rem);
+      margin-bottom: 0.7rem;
+      padding: clamp(1.25rem, #{"2vw + 0.75rem"}, 1.75rem) clamp(1.05rem, #{"2vw + 0.55rem"}, 1.55rem) 2.2rem;
+      border-radius: var(--sachsen-mobile-radius);
+      overflow: hidden;
+    }
+
+    .sachsen-footer-row {
+      display: none !important;
+    }
+
+    &:has(#step-1.show) .sachsen-landing-frame,
+    &:has(#step-1.active) .sachsen-landing-frame {
+      margin-bottom: clamp(1rem, #{"1.4vw + 0.55rem"}, 1.35rem);
+    }
+
+    .sachsen-landing-frame > .row {
+      flex: 0 0 auto;
+    }
+
+    .sachsen-landing-frame .navbar {
+      position: relative;
+      align-items: center;
+      min-height: 3.15rem;
+    }
+
+    .sachsen-landing-frame .navbar > .d-lg-none {
+      display: block !important;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-left: auto;
+    }
+
+    .sachsen-landing-frame .navbar-toggler {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.15rem;
+      height: 3.15rem;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .sachsen-landing-frame .navbar-toggler img {
+      width: 1.65rem;
+      height: auto;
+      filter: brightness(0) saturate(100%) invert(94%) sepia(7%) saturate(451%) hue-rotate(294deg) brightness(105%) contrast(103%);
+    }
+
+    .sachsen-mobile-language-switcher {
+      position: absolute;
+      top: 2.05rem;
+      right: 4.1rem;
+      z-index: 4;
+    }
+
+    .sachsen-mobile-language-switcher .dropdown-toggle {
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      color: var(--sachsen-campaign-ink) !important;
+      font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      box-shadow: none;
+    }
+
+    .sachsen-mobile-language-switcher .dropdown-toggle i,
+    .sachsen-mobile-language-switcher .dropdown-toggle:after {
+      color: var(--sachsen-campaign-ink) !important;
+    }
+
+    .sachsen-mobile-language-switcher .dropdown-menu {
+      position: absolute !important;
+      top: 100% !important;
+      right: -0.35rem !important;
+      left: auto !important;
+      transform: none !important;
+      min-width: 9.5rem;
+      margin-top: 0.5rem;
+      padding: 0.45rem;
+      border: 0;
+      border-radius: 16px;
+      background-color: var(--sachsen-campaign-ink);
+      box-shadow: 0 0.75rem 1.35rem rgba(7, 19, 62, 0.14);
+    }
+
+    .sachsen-mobile-language-switcher .dropdown-item {
+      border-radius: 12px;
+      color: #07133e;
+      font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+      font-size: 0.86rem;
+    }
+
+    .sachsen-mobile-language-switcher .dropdown-item:hover,
+    .sachsen-mobile-language-switcher .dropdown-item:focus {
+      background-color: var(--sachsen-campaign-bg);
+      color: var(--sachsen-campaign-ink);
+    }
+
+    #navbar-mobile {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 2147483647 !important;
+      display: block !important;
+      width: 100vw !important;
+      height: 0;
+      overflow-y: auto;
+      background-color: var(--sachsen-campaign-bg);
+      color: var(--sachsen-campaign-ink);
+      font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    }
+
+    &.mobile-nav-open #navbar-mobile {
+      height: 100dvh !important;
+      min-height: 100vh;
+    }
+
+    #navbar-mobile > .container-fluid,
+    #navbar-mobile .overlay-content,
+    #navbar-mobile .overlay-footer {
+      position: absolute !important;
+      z-index: 2;
+    }
+
+    #navbar-mobile > .container-fluid {
+      top: 0;
+      right: 0;
+      left: 0;
+      padding-top: max(3rem, env(safe-area-inset-top)) !important;
+    }
+
+    #navbar-mobile .closebtn {
+      position: absolute;
+      top: max(1.85rem, env(safe-area-inset-top));
+      right: 1.1rem;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.15rem;
+      height: 3.15rem;
+      padding: 0;
+      overflow: hidden;
+      color: var(--sachsen-campaign-ink);
+      font-size: 0;
+    }
+
+    #navbar-mobile .closebtn span {
+      margin-left: 0 !important;
+      color: var(--sachsen-campaign-ink);
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    #navbar-mobile .overlay-content {
+      top: 24vh !important;
+      right: 0;
+      left: 0;
+      display: block !important;
+      width: 100% !important;
+      padding: 0 1.5rem;
+      text-align: center;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    #navbar-mobile .overlay-content a {
+      display: block !important;
+      margin: 0.82rem 0;
+      text-decoration: none;
+      color: var(--sachsen-campaign-highlight);
+      font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+      font-size: clamp(1.56rem, #{"3.6vw + 0.66rem"}, 2.22rem);
+      font-weight: 500;
+      line-height: 1.05;
+      text-transform: uppercase;
+      visibility: visible !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    #navbar-mobile .overlay-footer {
+      top: 56vh !important;
+      right: 0;
+      bottom: auto !important;
+      left: 0;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    #navbar-mobile .overlay-footer,
+    #navbar-mobile .overlay-footer p,
+    #navbar-mobile .overlay-footer small,
+    #navbar-mobile .overlay-footer a {
+      color: var(--sachsen-campaign-ink);
+      font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+    }
+
+    #navbar-mobile .overlay-footer .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      margin: 0 0.24rem;
+      border-radius: 999px;
+      color: var(--sachsen-campaign-bg);
+      background-color: var(--sachsen-campaign-ink);
+      font-size: 1.25rem;
+    }
+
+    #intro {
+      margin-top: clamp(1.35rem, #{"3vw + 0.45rem"}, 2.15rem);
+      margin-bottom: 0;
+    }
+
+    .campaign-title {
+      max-width: 100%;
+      margin-bottom: 0.95rem;
+      font-size: clamp(2.24rem, #{"7.28vw + 0.62rem"}, 3.59rem);
+      overflow-wrap: break-word;
+    }
+
+    .campaign-kicker {
+      max-width: 100%;
+      font-size: clamp(1.34rem, #{"3.89vw + 0.47rem"}, 2.1rem);
+      overflow-wrap: break-word;
+    }
+
+    @media (min-width: 48.001rem) {
+      #intro {
+        margin-top: clamp(4rem, 10vw, 7rem);
+      }
+    }
+
+    .sachsen-step,
+    .sachsen-step-body,
+    .sachsen-step-intro,
+    .sachsen-step-controls,
+    .sachsen-form,
+    .sachsen-actions {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .sachsen-step {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .sachsen-step > .col-12,
+    .sachsen-step > .col-xl-10,
+    .sachsen-step-body {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    #step-1 .sachsen-step-header,
+    #step-1 .sachsen-language-switcher {
+      display: none;
+    }
+
+    #step-1 .sachsen-step-intro,
+    #step-2 .sachsen-step-intro,
+    #step-3 #preview {
+      padding-right: var(--sachsen-text-inset);
+      padding-left: var(--sachsen-text-inset);
+    }
+
+    #step-1 .col-xl-10 > p,
+    #step-1 .sachsen-step-1-meta,
+    .sachsen-mobile-toggle-note p,
+    #step-2 .sachsen-reminder h4,
+    #step-2 .sachsen-reminder > .col-12 > p {
+      padding-right: var(--sachsen-text-inset);
+      padding-left: var(--sachsen-text-inset);
+    }
+
+    #step-1 h2,
+    #step-2 h2,
+    #step-3 h2,
+    #step-3 #preview h2.fs-3 {
+      max-width: 100%;
+      margin-bottom: 0.75rem;
+      font-size: clamp(1.75rem, #{"4.5vw + 0.75rem"}, 2.35rem) !important;
+      line-height: 0.98;
+    }
+
+    #step-1 p,
+    #step-2 p,
+    #step-3 p,
+    #step-2 .form-check-label,
+    #step-3 label {
+      font-size: var(--sachsen-copy-size);
+      line-height: var(--sachsen-copy-line-height);
+    }
+
+    .back-small {
+      display: none !important;
+      color: #07133e;
+      font-size: 0.88rem;
+    }
+
+    #step-2 .sachsen-step-intro > h4,
+    #step-3 #preview > h4 {
+      display: none !important;
+    }
+
+    #step-1 .input-group-append {
+      display: none !important;
+    }
+
+    #step-1 .sachsen-step-controls {
+      margin-top: 1.05rem;
+    }
+
+    #step-1 .input-group.form-floating {
+      border: 0;
+      background-color: transparent;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    #step-1 .input-group.form-floating:focus-within {
+      box-shadow: none;
+    }
+
+    #step-1 .input-group.form-floating:has(input:valid:not(:placeholder-shown)) {
+      border-color: transparent;
+      background-color: transparent !important;
+      box-shadow: none;
+    }
+
+    #step-1 .input-group.form-floating:has(#zipcode:valid:not(:placeholder-shown))::after {
+      content: "\f058";
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      z-index: 3;
+      color: #D1F24E;
+      font-family: "Font Awesome 5 Free";
+      font-size: 1.45rem;
+      font-weight: 900;
+      line-height: 1;
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
+
+    #step-1 .input-group.form-floating,
+    #step-1 input[type="text"],
+    #step-1 .btn-new,
+    #step-2 .form-control,
+    #step-2 fieldset,
+    #step-2 #election-hints,
+    #step-3 #final-message,
+    #step-3 .final-letter {
+      border-radius: var(--sachsen-mobile-radius);
+    }
+
+    #step-1 input[type="text"] {
+      width: 100%;
+      min-height: var(--sachsen-control-height);
+      border: 1px solid rgba(7, 19, 62, 0.14) !important;
+      background-color: rgba(255, 255, 255, 0.58) !important;
+      box-shadow: 0 0.125rem 0.375rem rgba(7, 19, 62, 0.06) !important;
+      font-size: 16px;
+    }
+
+    #step-1 .form-floating > label {
+      font-size: 0.85rem;
+    }
+
+    #step-1 .btn-new,
+    #step-2 .btn-primary,
+    #step-3 .btn-send,
+    #step-3 .btn-copy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: var(--sachsen-control-height);
+      padding: 0.95rem 1rem;
+      font-size: 0.86rem;
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    #step-1 #autocomplete-list {
+      top: calc(4rem + 0.35rem);
+      border-radius: var(--sachsen-mobile-radius);
+      background-color: transparent;
+      max-height: min(15.5rem, 36dvh);
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      contain: paint;
+      isolation: isolate;
+      transform: translateZ(0);
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      mask-image: radial-gradient(white, black);
+      clip-path: inset(0 round var(--sachsen-mobile-radius));
+    }
+
+    #step-1 #autocomplete-list div {
+      background-color: #ffffff !important;
+      background-image: none !important;
+      background-clip: padding-box;
+    }
+
+    #step-1 #autocomplete-list div:last-child {
+      border-bottom-right-radius: var(--sachsen-mobile-radius);
+      border-bottom-left-radius: var(--sachsen-mobile-radius);
+    }
+
+    #step-1 .mt-5 {
+      margin-top: 1.05rem !important;
+    }
+
+    #right-side .tab-content > .d-block.d-lg-none {
+      margin-top: 0.9rem;
+      padding-right: var(--sachsen-text-inset);
+      padding-left: var(--sachsen-text-inset);
+    }
+
+    #right-side .tab-content > .d-block.d-lg-none small {
+      display: block;
+      font-size: calc(var(--sachsen-copy-size) * 0.9);
+      line-height: var(--sachsen-copy-line-height);
+    }
+
+    #right-side .tab-content > .d-block.d-lg-none small > a[href*="impressum"] {
+      display: inline-block;
+      margin-top: 0.45rem;
+    }
+
+    .sachsen-step-legal {
+      margin-top: calc(var(--sachsen-mobile-gap) * 0.95);
+      margin-bottom: 0.85rem;
+      padding-right: var(--sachsen-text-inset);
+      padding-left: var(--sachsen-text-inset);
+      font-size: calc(var(--sachsen-copy-size) * 0.9);
+      line-height: var(--sachsen-copy-line-height);
+    }
+
+    #step-2 .sachsen-step-legal,
+    #step-3 .sachsen-step-legal,
+    #step-2 .sachsen-step-legal p,
+    #step-3 .sachsen-step-legal p,
+    #step-2 .sachsen-step-legal small,
+    #step-3 .sachsen-step-legal small,
+    #step-2 .sachsen-step-legal a,
+    #step-3 .sachsen-step-legal a {
+      font-size: calc(var(--sachsen-copy-size) * 0.9);
+      line-height: var(--sachsen-copy-line-height);
+    }
+
+    .scrollIndicator {
+      display: none !important;
+    }
+
+    &.mobile-nav-open .scrollIndicator {
+      display: none !important;
+    }
+
+    #address-mobile,
+    #preview-mobile {
+      display: none !important;
+    }
+
+    #address-desktop,
+    #preview {
+      display: block !important;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: var(--sachsen-mobile-gap);
+    }
+
+    #address-desktop .back-small,
+    #preview .back-small {
+      display: none !important;
+      margin-bottom: 0.85rem !important;
+    }
+
+    #step-2 #main-form {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 0.95rem !important;
+      margin-bottom: 0 !important;
+      overflow-x: hidden;
+    }
+
+    #step-2 #main-form .row {
+      --bs-gutter-x: 0;
+    }
+
+    #step-2 #main-form [class*="col-"] {
+      min-width: 0;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    #step-2 #main-form .sachsen-form-row,
+    #birthday .row {
+      --bs-gutter-x: clamp(0.38rem, #{"0.58vw + 0.18rem"}, 0.5rem);
+      margin-right: calc(var(--bs-gutter-x) * -0.5);
+      margin-left: calc(var(--bs-gutter-x) * -0.5);
+    }
+
+    #step-2 #main-form .sachsen-form-row > [class*="col-"],
+    #birthday .row > [class*="col-"] {
+      padding-right: calc(var(--bs-gutter-x) * 0.5);
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+
+    #birthday .row {
+      gap: clamp(0.5rem, #{"0.7vw + 0.24rem"}, 0.72rem);
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    #birthday .row > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    #step-2 .row.mt-3,
+    #step-2 .row.mt-4,
+    #newform {
+      margin-top: var(--sachsen-mobile-gap) !important;
+    }
+
+    #newform h3 {
+      margin-top: calc(var(--sachsen-mobile-gap) * 1.75);
+      margin-bottom: calc(var(--sachsen-mobile-gap) * 1.05) !important;
+      padding-right: var(--sachsen-text-inset);
+      padding-left: var(--sachsen-text-inset);
+      font-size: clamp(1.3rem, #{"2.4vw + 0.82rem"}, 1.7rem);
+    }
+
+    #step-2 .mb-3,
+    #step-2 .mb-lg-0 {
+      margin-bottom: var(--sachsen-mobile-gap) !important;
+    }
+
+    #step-2 fieldset {
+      margin-top: var(--sachsen-mobile-gap) !important;
+      padding: 0.8rem !important;
+      border: 0;
+      background-color: rgba(255, 255, 255, 0.58);
+    }
+
+    #step-2 legend {
+      color: #07133e;
+      font-size: 0.82rem;
+      line-height: 1.1;
+    }
+
+    #birthday .row {
+      flex-wrap: nowrap;
+    }
+
+    #birthday .col-4 {
+      flex: 0 0 calc((100% - clamp(1rem, #{"1.4vw + 0.48rem"}, 1.44rem)) / 3);
+      width: calc((100% - clamp(1rem, #{"1.4vw + 0.48rem"}, 1.44rem)) / 3);
+      max-width: calc((100% - clamp(1rem, #{"1.4vw + 0.48rem"}, 1.44rem)) / 3);
+    }
+
+    #birthday input[type="text"] {
+      padding-right: 0.65rem !important;
+      padding-left: 0.65rem !important;
+      font-size: 16px;
+    }
+
+    #birthday .form-floating > label {
+      padding-right: 0.35rem !important;
+      padding-left: 0.65rem !important;
+      font-size: 0.72rem;
+      white-space: nowrap;
+    }
+
+    #step-2 .form-check.d-none.d-lg-block {
+      display: none !important;
+    }
+
+    .sachsen-mobile-toggle-row {
+      display: flex !important;
+      gap: 0.8rem;
+      margin-top: calc(var(--sachsen-mobile-gap) * 1.25) !important;
+      margin-bottom: 0.3rem !important;
+      padding-right: calc(var(--sachsen-text-inset) + 4px);
+      padding-left: 0;
+    }
+
+    .sachsen-mobile-toggle-row > p {
+      padding-right: var(--sachsen-text-inset);
+      padding-left: var(--sachsen-text-inset);
+    }
+
+    .sachsen-mobile-toggle-row > div {
+      flex: 0 0 auto;
+      margin-left: auto;
+    }
+
+    .sachsen-mobile-toggle-row .tgl + .tgl-btn {
+      width: clamp(3rem, #{"2vw + 2.4rem"}, 3.35rem);
+      height: clamp(1.65rem, #{"1vw + 1.35rem"}, 1.85rem);
+      padding: 0.15rem;
+    }
+
+    .sachsen-mobile-toggle-row .tgl-light:not(:checked) + .tgl-btn {
+      background: #d8d8d8;
+    }
+
+    .sachsen-mobile-toggle-row .tgl-light:checked + .tgl-btn {
+      background: #D1F24E;
+    }
+
+    .sachsen-mobile-toggle-note {
+      width: 100%;
+      max-width: none;
+      margin-bottom: calc(var(--sachsen-mobile-gap) * 1.2);
+      padding-left: 0;
+    }
+
+    .sachsen-mobile-toggle-note p {
+      margin-bottom: 0;
+    }
+
+    #step-2 #election-hints,
+    #step-3 #final-message {
+      margin-top: var(--sachsen-mobile-gap) !important;
+      margin-bottom: var(--sachsen-mobile-gap) !important;
+      padding: 0.9rem !important;
+    }
+
+    #step-2 #election-hints {
+      margin-top: calc(var(--sachsen-mobile-gap) * 1.2) !important;
+      margin-bottom: calc(var(--sachsen-mobile-gap) * 1.35) !important;
+    }
+
+    #step-2 #election-hints .d-flex {
+      align-items: flex-start !important;
+    }
+
+    #step-2 #main-form > .sachsen-actions {
+      margin-top: calc(var(--sachsen-mobile-gap) * 1.25) !important;
+      margin-bottom: 0 !important;
+    }
+
+    #step-2 #main-form > .sachsen-actions > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    #step-2 .form-control,
+    #step-2 fieldset,
+    #step-2 #election-hints,
+    #step-3 #final-message,
+    #step-3 .final-letter {
+      border-color: rgba(7, 19, 62, 0.14) !important;
+      background-color: rgba(255, 255, 255, 0.58) !important;
+      color: #07133e;
+    }
+
+    #step-2 input[type="text"]:valid:not(:placeholder-shown),
+    #step-2 input[type="email"]:valid:not(:placeholder-shown) {
+      border-color: #D1F24E !important;
+      background-color: rgba(255, 255, 255, 0.58) !important;
+      box-shadow: inset 0 0 0 0.15rem #D1F24E !important;
+    }
+
+    #step-2 input[type="text"]:-webkit-autofill,
+    #step-2 input[type="email"]:-webkit-autofill,
+    #step-2 input[type="text"]:-webkit-autofill:hover,
+    #step-2 input[type="email"]:-webkit-autofill:hover,
+    #step-2 input[type="text"]:-webkit-autofill:focus,
+    #step-2 input[type="email"]:-webkit-autofill:focus {
+      -webkit-text-fill-color: #07133e;
+      caret-color: #07133e;
+      transition: background-color 9999s ease-out;
+      box-shadow: inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-1 #zipcode:-webkit-autofill,
+    #step-1 #zipcode:-webkit-autofill:hover {
+      -webkit-text-fill-color: #07133e;
+      caret-color: #07133e;
+      transition: background-color 9999s ease-out;
+      background-color: rgba(255, 255, 255, 0.58) !important;
+      box-shadow: inset 0 0 0 1000px #fbf6fb !important;
+      -webkit-box-shadow: inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-1 #zipcode:-webkit-autofill:focus {
+      border-color: var(--sachsen-action-blue) !important;
+      -webkit-text-fill-color: #07133e;
+      caret-color: #07133e;
+      transition: background-color 9999s ease-out;
+      background-color: rgba(255, 255, 255, 0.58) !important;
+      box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue),
+        inset 0 0 0 1000px #fbf6fb !important;
+      -webkit-box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue),
+        inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-2 input[type="text"]:valid:-webkit-autofill:not(:placeholder-shown),
+    #step-2 input[type="email"]:valid:-webkit-autofill:not(:placeholder-shown) {
+      border-color: #D1F24E !important;
+      box-shadow: inset 0 0 0 0.15rem #D1F24E,
+        inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-2 .form-control:focus {
+      border-color: var(--sachsen-action-blue) !important;
+      background-color: rgba(255, 255, 255, 0.58) !important;
+      box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue) !important;
+    }
+
+    #step-1 .form-control:focus {
+      border-color: var(--sachsen-action-blue) !important;
+      background-color: rgba(255, 255, 255, 0.58) !important;
+      box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue) !important;
+    }
+
+    #step-1 #zipcode:valid:not(:placeholder-shown),
+    #step-1 #zipcode:valid:focus:not(:placeholder-shown),
+    #step-1 #zipcode:valid:-webkit-autofill:not(:placeholder-shown),
+    #step-1 #zipcode:valid:-webkit-autofill:focus:not(:placeholder-shown) {
+      border-color: #D1F24E !important;
+      padding-right: 3.25rem;
+      background-color: rgba(255, 255, 255, 0.58) !important;
+      box-shadow: inset 0 0 0 0.15rem #D1F24E !important;
+      -webkit-box-shadow: inset 0 0 0 0.15rem #D1F24E,
+        inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-1 #zipcode:valid:-webkit-autofill:focus:not(:placeholder-shown),
+    #step-1 #zipcode:-webkit-autofill:focus {
+      border-color: var(--sachsen-action-blue) !important;
+      box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue),
+        inset 0 0 0 1000px #fbf6fb !important;
+      -webkit-box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue),
+        inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-1 #zipcode:focus,
+    #step-1 #zipcode:valid:focus:not(:placeholder-shown) {
+      border-color: var(--sachsen-action-blue) !important;
+      outline: 0.15rem solid var(--sachsen-action-blue) !important;
+      outline-offset: -0.15rem;
+      box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue) !important;
+      -webkit-box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue),
+        inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-1 #zipcode:-webkit-autofill:focus,
+    #step-1 #zipcode:valid:-webkit-autofill:focus:not(:placeholder-shown) {
+      border-color: var(--sachsen-action-blue) !important;
+      outline: 0.15rem solid var(--sachsen-action-blue) !important;
+      outline-offset: -0.15rem;
+      box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue),
+        inset 0 0 0 1000px #fbf6fb !important;
+      -webkit-box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue),
+        inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-1 #zipcode:invalid:not(:placeholder-shown) {
+      border-color: var(--sachsen-action-blue) !important;
+      box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue) !important;
+      -webkit-box-shadow: inset 0 0 0 0.15rem var(--sachsen-action-blue),
+        inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-2 input[type="text"]:valid:focus:not(:placeholder-shown),
+    #step-2 input[type="email"]:valid:focus:not(:placeholder-shown) {
+      border-color: #D1F24E !important;
+      box-shadow: inset 0 0 0 0.15rem #D1F24E !important;
+    }
+
+    #step-2 input[type="text"]:valid:-webkit-autofill:focus:not(:placeholder-shown),
+    #step-2 input[type="email"]:valid:-webkit-autofill:focus:not(:placeholder-shown) {
+      border-color: #D1F24E !important;
+      box-shadow: inset 0 0 0 0.15rem #D1F24E,
+        inset 0 0 0 1000px #fbf6fb !important;
+    }
+
+    #step-2 .form-floating > label {
+      color: rgba(7, 19, 62, 0.58);
+    }
+
+    #step-1 input,
+    #step-2 input,
+    #step-2 textarea,
+    #step-2 select,
+    #step-3 input,
+    #step-3 textarea,
+    #step-3 select,
+    #step-1 .form-control,
+    #step-2 .form-control,
+    #step-3 .form-control {
+      font-size: 16px !important;
+    }
+
+    #step-2 .sachsen-reminder {
+      margin-top: calc(var(--sachsen-mobile-gap) * 1.25) !important;
+    }
+
+    #step-2 .sachsen-reminder h4 {
+      margin-bottom: 0.65rem;
+      font-size: clamp(1.3rem, #{"2.4vw + 0.82rem"}, 1.7rem);
+      line-height: 1.05;
+    }
+
+    #step-2 .sachsen-reminder > .col-12 > p {
+      margin-bottom: 1rem !important;
+    }
+
+    #step-2 .sachsen-reminder .form-check {
+      margin-top: 0.85rem !important;
+    }
+
+    #step-2 .sachsen-step-copy small {
+      margin-top: calc(var(--sachsen-mobile-gap) * 0.65);
+    }
+
+    .sachsen-preview-card {
+      min-height: auto;
+      padding: clamp(0.82rem, #{"0.75vw + 0.62rem"}, 1.05rem) clamp(1.15rem, #{"2.4vw + 0.55rem"}, 1.7rem);
+    }
+
+    .sachsen-preview-card h4 {
+      font-size: clamp(1.02rem, #{"2.2vw + 0.52rem"}, 1.28rem);
+      line-height: 1;
+    }
+
+    #step-3 #subject,
+    #step-3 #final-letter,
+    #step-3 #final-message,
+    .sachsen-letter-card p,
+    .sachsen-letter-card span {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .sachsen-preview-card,
+    .sachsen-municipality-card,
+    .sachsen-letter-card,
+    .sachsen-share-cta {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: var(--sachsen-mobile-gap);
+      padding: 1rem 1.15rem;
+      border-radius: var(--sachsen-mobile-radius);
+    }
+
+    .sachsen-letter-card {
+      min-height: auto;
+    }
+
+    &:has(#step-2.show),
+    &:has(#step-2.active),
+    &:has(#step-3.show),
+    &:has(#step-3.active) {
+      .sachsen-landing-frame,
+      .sachsen-footer-row,
+      .scrollIndicator,
+      .sachsen-outro-panel,
+      #sachsen-share-cta,
+      #address-mobile,
+      #preview-mobile {
+        display: none !important;
+      }
+
+      #right-side .tab-content > .d-block.d-lg-none {
+        display: none !important;
+      }
+    }
+
+    &:has(#step-2.show) #right-side > .container,
+    &:has(#step-2.active) #right-side > .container {
+      padding-bottom: calc(0.85rem + 10px) !important;
+    }
+
+    &:has(#step-2.show) #bigletter,
+    &:has(#step-2.active) #bigletter,
+    &:has(#step-3.show) #finalletter,
+    &:has(#step-3.active) #finalletter {
+      display: block !important;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 0;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &:has(#step-2.show) #bigletter,
+    &:has(#step-2.active) #bigletter {
+      margin-bottom: calc(var(--sachsen-mobile-gap) * 1.35);
+    }
+
+    &.sachsen-share-cta-visible:has(#step-3.show) #finalletter,
+    &.sachsen-share-cta-visible:has(#step-3.active) #finalletter {
+      display: none !important;
+    }
+
+    &.sachsen-share-cta-visible:has(#step-3.show) #sachsen-share-cta,
+    &.sachsen-share-cta-visible:has(#step-3.active) #sachsen-share-cta {
+      display: flex !important;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    #step-3 .row.py-4 {
+      padding-top: 0.5rem !important;
+      padding-bottom: 1rem !important;
+    }
+
+    #step-3 .row.py-4 > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    #step-3 .row.py-4 > [class*="col-"]:first-child {
+      margin-bottom: var(--sachsen-mobile-gap) !important;
+    }
+
+    #finalletter .sachsen-preview-card {
+      display: none;
+    }
+
+    #finalletter .sachsen-municipality-card,
+    #finalletter .sachsen-letter-card {
+      border: 1px solid rgba(7, 19, 62, 0.1);
+      background-color: rgba(255, 255, 255, 0.58);
+      color: #07133e;
+      box-shadow: 0 0.125rem 0.375rem rgba(7, 19, 62, 0.06);
+    }
+
+    #finalletter .sachsen-letter-card #final-letter {
+      padding: 0 !important;
+      border: 0 !important;
+      border-left: 0 !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      color: #07133e;
+      box-shadow: none !important;
+    }
+
+    &:has(#step-3.show),
+    &:has(#step-3.active) {
+      #left-side,
+      .sachsen-sidebar,
+      #right-side,
+      #right-side > .container,
+      #right-side > .container > .row,
+      .tab-content,
+      #step-3,
+      #step-3 .sachsen-step-body {
+        display: contents !important;
+      }
+
+      .container-fluid {
+        width: 100%;
+        max-width: none;
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .container-fluid > .row {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: var(--sachsen-mobile-gap);
+        width: 100%;
+        max-width: 35rem;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: var(--sachsen-mobile-gutter);
+        padding-left: var(--sachsen-mobile-gutter);
+      }
+
+      #preview,
+      #finalletter,
+      #sachsen-share-cta,
+      #final-message,
+      #step-3 .sachsen-actions,
+      #step-3 .sachsen-step-legal {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      #preview {
+        grid-row: 2;
+        margin-bottom: 0;
+      }
+
+      #preview h2 {
+        margin-bottom: 0.75rem !important;
+      }
+
+      #preview > p {
+        margin-bottom: 0 !important;
+      }
+
+      #preview #subject {
+        display: none;
+      }
+
+      #finalletter {
+        grid-row: 3;
+        margin-bottom: 0;
+      }
+
+      #sachsen-share-cta {
+        grid-row: 1;
+        margin-top: var(--sachsen-mobile-gutter);
+        margin-bottom: 0;
+      }
+
+      #final-message {
+        grid-row: 4;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+
+      #step-3 .sachsen-actions {
+        display: flex !important;
+        grid-row: 5;
+        row-gap: var(--sachsen-mobile-gap);
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+      #step-3 .sachsen-step-legal {
+        grid-row: 6;
+        margin-top: calc(var(--sachsen-mobile-gap) * 0.55);
+      }
+
+      #step-3 .sachsen-actions > [class*="col-"] {
+        display: block !important;
+        width: 100%;
+      }
+
+      #step-3 .sachsen-actions > [class*="col-"]:first-child {
+        margin-bottom: 0 !important;
+      }
+
+      &.sachsen-share-cta-visible {
+        .container-fluid > .row {
+          row-gap: calc(var(--sachsen-mobile-gap) * 0.72);
+        }
+
+        #sachsen-share-cta {
+          margin-top: var(--sachsen-mobile-gutter);
+          margin-bottom: calc(var(--sachsen-mobile-gap) * 0.76);
+        }
+
+        #preview {
+          margin-bottom: calc(var(--sachsen-mobile-gap) * 0.55);
+        }
+
+        #final-message {
+          grid-row: 3;
+        }
+
+        #step-3 .sachsen-actions {
+          grid-row: 4;
+          row-gap: calc(var(--sachsen-mobile-gap) * 0.72);
+        }
+
+        #step-3 .sachsen-actions > [class*="col-"] {
+          margin-bottom: 0 !important;
+        }
+
+        #step-3 .sachsen-step-legal {
+          grid-row: 5;
+          margin-top: calc(var(--sachsen-mobile-gap) * 0.55);
+        }
+      }
+
+      #send-email,
+      #copy-text {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      #send-email {
+        order: 0;
+      }
+
+      #copy-text {
+        order: 0;
+      }
+
+      #finalletter .sachsen-letter-card {
+        margin-bottom: 0;
+      }
+    }
+
+    .sachsen-share-cta {
+      min-height: auto;
+      padding: 0 clamp(1.45rem, #{"3vw + 0.7rem"}, 2.15rem) clamp(1.45rem, #{"3vw + 0.7rem"}, 2.15rem);
+      background-color: var(--sachsen-campaign-bg);
+      color: var(--sachsen-campaign-highlight);
+    }
+
+    .sachsen-share-primary {
+      width: calc(100% + (clamp(1.45rem, #{"3vw + 0.7rem"}, 2.15rem) * 2));
+      min-height: auto;
+      margin-right: calc(clamp(1.45rem, #{"3vw + 0.7rem"}, 2.15rem) * -1);
+      margin-left: calc(clamp(1.45rem, #{"3vw + 0.7rem"}, 2.15rem) * -1);
+      padding: clamp(2.16rem, #{"3.6vw + 1.14rem"}, 3rem) clamp(1.45rem, #{"3vw + 0.7rem"}, 2.15rem) calc(var(--sachsen-mobile-gap) * 1.1);
+      border-radius: inherit;
+      box-shadow: 0 0.8rem 1.45rem rgba(39, 35, 95, 0.28);
+    }
+
+    .sachsen-share-cta h2 {
+      margin-bottom: 1rem;
+      color: var(--sachsen-campaign-highlight);
+      font-family: "Sachsen Zodiak", "Baskervville", Georgia, serif;
+      font-size: clamp(2.2rem, #{"7.14vw + 0.61rem"}, 3.52rem);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .sachsen-share-cta .sachsen-share-copy,
+    .sachsen-share-cta .sachsen-share-donate-text {
+      color: var(--sachsen-campaign-highlight);
+      font-family: "Sachsen Switzer", "Source Sans 3", system-ui, sans-serif;
+      font-size: clamp(1.16rem, #{"3.15vw + 0.4rem"}, 1.62rem);
+      line-height: 1.08;
+    }
+
+    .sachsen-share-cta .sachsen-share-donate-text {
+      color: var(--sachsen-campaign-ink) !important;
+      font-size: clamp(1.14rem, #{"2.45vw + 0.54rem"}, 1.48rem) !important;
+    }
+
+    .sachsen-share-actions {
+      justify-content: space-between;
+      width: 100%;
+      gap: clamp(0.34rem, #{"1vw + 0.08rem"}, 0.52rem);
+      margin-top: calc(var(--sachsen-mobile-gap) * 1.25);
+      margin-bottom: calc(var(--sachsen-mobile-gap) * 1.45);
+    }
+
+    .sachsen-share-actions a {
+      width: clamp(2.34rem, #{"6.2vw + 0.78rem"}, 2.88rem);
+      height: clamp(2.34rem, #{"6.2vw + 0.78rem"}, 2.88rem);
+      font-size: clamp(1.2rem, #{"3.1vw + 0.48rem"}, 1.5rem);
+    }
+
+    .sachsen-share-donate-text {
+      margin-bottom: var(--sachsen-mobile-gap) !important;
+    }
+
+    .sachsen-share-donate {
+      display: block;
+      margin-top: calc(var(--sachsen-mobile-gap) * 3.25);
+    }
+
+    .sachsen-share-donate-button {
+      align-self: center;
+      display: flex;
+      width: 100%;
+      margin-bottom: calc(var(--sachsen-mobile-gap) * 0.35);
+      min-height: calc(var(--sachsen-control-height) * 0.82);
+      padding-right: 1.35rem;
+      padding-left: 1.35rem;
+      font-size: calc(var(--sachsen-copy-size) * 0.92);
+    }
+
+    .sachsen-share-nav {
+      gap: clamp(0.48rem, #{"1.4vw + 0.14rem"}, 0.68rem);
+      margin-top: calc(var(--sachsen-mobile-gap) * 1.25);
+      font-size: calc(var(--sachsen-copy-size) * 0.88);
+    }
+
+    .sachsen-share-legal {
+      margin-top: calc(var(--sachsen-mobile-gap) * 0.65);
+      font-size: calc(var(--sachsen-copy-size) * 0.9);
+      line-height: var(--sachsen-copy-line-height);
+    }
+
+    #step-3 .sachsen-letter-card {
+      border: 1px solid rgba(7, 19, 62, 0.1);
+      background-color: rgba(250, 232, 239, 0.72);
+      color: #07133e;
+      box-shadow: 0 0.125rem 0.375rem rgba(7, 19, 62, 0.06);
+    }
+
+    #step-3 .sachsen-letter-card #final-letter {
+      padding: 0 !important;
+      border: 0 !important;
+      border-left: 0 !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      color: #07133e;
+      box-shadow: none !important;
+    }
+
+    .sachsen-outro-panel {
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem !important;
+      padding: 1.25rem;
+      border-radius: 24px;
+    }
+
+    .sachsen-outro-panel h1 {
+      color: #07133e;
+      font-size: clamp(1.65rem, #{"5.5vw + 0.4rem"}, 2.35rem);
+      line-height: 0.96;
+      text-transform: uppercase;
+    }
+
+    .sachsen-outro-panel p {
+      color: #07133e;
+      font-size: var(--sachsen-copy-size);
+      line-height: var(--sachsen-copy-line-height);
+    }
+
+    .outro a {
+      color: #07133e;
+      background-color: rgba(255, 255, 255, 0.58);
+    }
+  }
+}

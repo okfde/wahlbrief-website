@@ -1,0 +1,15 @@
+<div class="tab-pane fade sachsen-step sachsen-step-2" id="step-2" role="tabpanel" aria-labelledby="step-2-tab">
+    <div class="col-12 sachsen-step-body">
+        <div id="address-desktop" class="sachsen-step-intro">
+            <h4 class="fw-bold float-end">2/3</h4>
+            <button class="btn back-small mb-4 d-none d-lg-block"
+                onclick="backtofirstpage();">{% t right.back %}</button>
+            <h2>{% t right.residence %}</h2>
+            <p class="sachsen-step-copy">{% t right.optional %}</p>
+        </div>
+        {% include sachsen-anhalt/step-2-form.html %}
+        <div class="sachsen-step-legal">
+            {% include footer.html %}
+        </div>
+    </div>
+</div>

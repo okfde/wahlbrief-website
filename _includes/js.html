@@ -2,3 +2,48 @@
 <script src="{{ site.baseurl_root }}/assets/js/bootstrap.bundle.min.js"></script>
 
 <script src="{{ site.baseurl_root }}/assets/js/main.js"></script>
+
+{% if page.page_class == "page-sachsen-anhalt" %}
+<script>
+  (function () {
+    var defaultScrollTop = window.scrollTop;
+
+    window.scrollTop = function () {
+      var stepThreeActive = document.getElementById("step-3") &&
+        document.getElementById("step-3").classList.contains("active");
+      var stackedLayout = window.matchMedia("(max-width: 1199px)").matches;
+
+      if (stepThreeActive && stackedLayout) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
+      if (typeof defaultScrollTop === "function") {
+        defaultScrollTop();
+      }
+    };
+  })();
+</script>
+<script src="{{ site.baseurl_root }}/assets/js/sachsen-anhalt.js"></script>
+{% endif %}
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+
+  (function() {
+    var u="https://traffic.okfn.de/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setDomains', [document.location.host]])
+    _paq.push(['disableCookies'])
+    _paq.push(['disableBrowserFeatureDetection'])
+
+    _paq.push(['setSiteId', '61']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->

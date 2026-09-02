@@ -191,3 +191,24 @@ donate:
     text: ""
 nav:
   close: "Close"
+sachsen_anhalt:
+  campaign:
+    title: "Apply for<br>postal vote<br>now"
+    kicker: "State election<br>on 6 September<br>in Saxony-Anhalt"
+  step_1:
+    description_1: "Please enter the post code of your registered address first."
+    description_2: "Your local citizens' registration office is usually responsible for your postal vote application."
+    privacy_intro: "We only transmit and store your data if you explicitly request it. See also our"
+    privacy: "We only transmit and store your data if you explicitly request it. See also our <a href='/terms.html' target='_blank'>privacy policy</a>."
+  share_cta:
+    title: "Vote easily"
+    text_1: "Many people do not know how quick and easy postal voting is."
+    text_2: "<span class='sachsen-share-emphasis'>Every vote counts</span> - share Wahlbrief now and help spread the word!"
+  sharing:
+    copy: "I have just applied for postal voting documents for the state election in Saxony-Anhalt.%0D%0AAre you in too? Every vote counts.%0D%0Ahttps://wahlbrief.de/sachsen-anhalt/"
+    email:
+      subject: "Apply for postal voting documents for the state election in Saxony-Anhalt: Every vote counts!"
+      body: "Hello!%0D%0A%0D%0AI have just applied online for postal voting documents for the state election in Saxony-Anhalt.%0D%0AIt is quick and easy: https://wahlbrief.de/sachsen-anhalt/"
+    bluesky: "I have just applied for postal voting documents for the state election in Saxony-Anhalt.%0D%0AAre you in too? Every vote counts.%0D%0Ahttps://wahlbrief.de/sachsen-anhalt/"
+    telegram: "I have just applied for postal voting documents for the state election in Saxony-Anhalt.%0D%0AAre you in too? Every vote counts."
+    whatsapp: "I have just applied for postal voting documents for the state election in Saxony-Anhalt.%0D%0AAre you in too? Every vote counts. https://wahlbrief.de/sachsen-anhalt/"

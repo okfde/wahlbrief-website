@@ -1,20 +1,19 @@
 <h1>{% t left.share %}</h1>
 <p class="mb-4">{% t left.description %}</p>
 
-<a class="copy" data-clipboard-text="Ich habe gerade Briefwahlunterlagen zur Landtagswahl beantragt.%0D%0ABist du auch dabei? Jede Stimme zählt.%0D%0Ahttps://wahlbrief.de/sachsen-anhalt/" href="#"
+<a class="copy" data-clipboard-text="{% t sachsen_anhalt.sharing.copy %}" href="#"
     data-bs-placement="top" data-bs-toggle="tooltip" title="{% t right.message.sharecopy %}"><i
         class="far fa-copy"></i></a>
 <a
-    href="mailto:?subject=Briefwahl beantragen zur Landtagswahl: Jede Stimme zählt!&amp;body=Hallo!%0D%0A%0D%0AIch habe gerade online die Briefwahlunterlagen zur Landtagswahl beantragt.%0D%0ADas geht total schnell und einfach: https://wahlbrief.de/sachsen-anhalt/"><i
+    href="mailto:?subject={% t sachsen_anhalt.sharing.email.subject %}&amp;body={% t sachsen_anhalt.sharing.email.body %}"><i
         class="fas fa-envelope"></i></a>
 <a href="https://facebook.com/sharer/sharer.php?u={{ page.share_url }}" target="_blank"
     rel="noreferrer nopener"><i class="fa-brands fa-facebook"></i></a>
-<a href="https://bsky.app/intent/compose?text={% t right.sharing.bluesky %}" target="_blank"
+<a href="https://bsky.app/intent/compose?text={% t sachsen_anhalt.sharing.bluesky %}" target="_blank"
     rel="noreferrer nopener"><i class="fa-brands fa-bluesky"></i></a>
 <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.share_url }}"
     target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-linkedin-in"></i></a>
-<a href="https://t.me/share/url?text={% t right.sharing.telegram %}&amp;url={{ page.share_url }}"
+<a href="https://t.me/share/url?text={% t sachsen_anhalt.sharing.telegram %}&amp;url={{ page.share_url }}"
     target="_blank" rel="noreferrer nopener"><i class="fa-solid fa-paper-plane"></i></a>
-<a href="https://wa.me/?text={% t right.sharing.whatsapp %}" target="_blank"
+<a href="https://wa.me/?text={% t sachsen_anhalt.sharing.whatsapp %}" target="_blank"
     rel="noreferrer nopener"><i class="fa-brands fa-whatsapp"></i></a>
-

@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1{% if page.page_class == 'page-sachsen-anhalt' %}, viewport-fit=cover{% endif %}">
 
     <title>
         {% if page.title %}
@@ -28,7 +28,7 @@
     <link rel="apple-touch-icon" href="{{ site.baseurl_root }}/assets/images/favicons/apple-touch-icon.png">
     <link rel="mask-icon" href="{{ site.baseurl_root }}/assets/images/favicons/favicon.png" color="#0047e1">
     <link rel="icon" href="{{ site.baseurl_root }}/assets/images/favicons/favicon.png" />
-    <meta name="theme-color" content="#0047e1">
+    <meta name="theme-color" content="{% if page.page_class == 'page-sachsen-anhalt' %}transparent{% else %}#0047e1{% endif %}">
 
     <!-- Font preloads -->
     <link rel="preload" as="font" href="{{ site.baseurl_root }}/assets/fonts/source-sans-pro/SourceSans3-VariableFont_wght.ttf"
@@ -36,6 +36,15 @@
     <link rel="preload" as="font" href="{{ site.baseurl_root }}/assets/fonts/source-sans-pro/SourceSans3-Italic-VariableFont_wght.ttf"
         crossOrigin="anonymous" />
 
+    {% if page.page_class == "page-sachsen-anhalt" %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
+    {% endif %}
+
     <link rel="stylesheet" href="{{ site.baseurl_root }}/assets/css/main.css">
+    {% if page.page_class == "page-sachsen-anhalt" %}
+    <link rel="stylesheet" href="{{ site.baseurl_root }}/assets/css/sachsen-anhalt.css">
+    {% endif %}
 
 </head>

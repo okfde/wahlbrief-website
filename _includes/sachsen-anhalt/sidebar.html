@@ -1,0 +1,201 @@
+<div id="left-side" class="col-md-12 col-lg-6 background-primary pattern">
+    <div class="container sachsen-sidebar d-flex flex-column h-100 py-5 px-2 px-lg-5 overflow-auto">
+        <div class="sachsen-landing-frame">
+            {% include navbar.html %}
+            <div class="dropdown sachsen-mobile-language-switcher d-lg-none">
+                <button class="dropdown-toggle" type="button" id="sachsenMobileLanguageMenu"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-globe me-1"></i>
+                    {% for lang in site.languages %}
+                    {% assign lang_short = site.data[lang].l10n.lang_short %}
+                    {% if lang == site.lang %}
+                    {{ lang_short }}
+                    {% endif %}
+                    {% endfor %}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="sachsenMobileLanguageMenu">
+                    {% for lang in site.languages %}
+                    {% assign lang_name = site.data[lang].l10n.lang_name %}
+                    {% if lang == site.default_lang %}
+                    <li><a class="dropdown-item" href="{{ site.baseurl_root }}{{ page.url }}">{{ lang_name }}</a></li>
+                    {% else %}
+                    <li><a class="dropdown-item" href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{{ lang_name }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="row">
+                {% include {{ page.app_intro }} %}
+            </div>
+            <div class="row mt-auto d-none d-lg-block sachsen-footer-row">
+                <div class="col-12">
+                    {% include nav.html %}
+                    {% include footer.html %}
+                </div>
+            </div>
+        </div>
+
+        <div id="bigletter" class="sachsen-preview-panel col-12">
+            <div class="sachsen-preview-card">
+                <h4 class="fw-bold mb-0">{% t left.preview %}</h4>
+            </div>
+
+            <div class="sachsen-municipality-card">
+                <h5 id="munname" class="fw-bold mb-1"></h5>
+                <p id="munemail" class="mb-0 me-1 d-inline-block"></p>
+                <button class="btn copy p-0 d-inline-block" data-bs-placement="top"
+                    data-bs-toggle="tooltip" title="{% t right.message.copied %}"
+                    data-clipboard-target="#munemail">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="sachsen-letter-card">
+                <p>{% t right.letter.title %}</p>
+                <p class="mb-0">
+                    {% t right.letter.name %}: <span class="fw-bold" id="name"></span><br />
+                    {% t right.letter.surname %}: <span class="fw-bold" id="surname"></span><br />
+                    {% t right.letter.birthday %}:
+                    <span class="fw-bold" id="birthdate"></span><span class="fw-bold"
+                        id="birthmonth"></span><span class="fw-bold" id="birthyear"></span><br />
+                    {% t right.letter.address %}:<br />
+                    <span class="fw-bold" id="street"></span><br data-br="street" style="display: none;" />
+                    <span class="fw-bold" id="zip"></span>
+                    <span class="fw-bold" id="city"></span><br data-br="zip" style="display: none;" /><br />
+                </p>
+
+                <p id="ogaddress">{% t right.letter.sendtomine %}</p>
+
+                <p class="mb-0" id="newaddress">{% t right.letter.sendalternative %}<br />
+                    <span class="fw-bold" id="newname"></span>
+                    <span class="fw-bold" id="newsurname"></span>
+                    <br data-br="newsurname" style="display: none;" />
+                    <span class="fw-bold" id="address"></span><br data-br="address" style="display: none;" />
+                    <span class="fw-bold" id="newstreet"></span><br data-br="newstreet"
+                        style="display: none;" />
+                    <span class="fw-bold" id="newzip"></span>
+                    <span class="fw-bold" id="newcity"></span><br data-br="newzip"
+                        style="display: none;" /><br />
+                </p>
+
+                <p class="mb-0">{% t right.letter.regards %}<br />
+                    <span class="fw-bold" id="id-name"></span>
+                    <span class="fw-bold" id="id-surname"></span>
+                    <span id="id-newname"></span>
+                    <span id="id-newsurname"></span>
+                    <span id="id-street"></span>
+                    <span id="id-newstreet"></span>
+                    <span id="id-address"></span>
+                    <span id="id-zip"></span>
+                    <span id="id-newzip"></span>
+                    <span id="id-city"></span>
+                    <span id="id-newcity"></span>
+                </p>
+            </div>
+        </div>
+
+        <div id="finalletter" class="sachsen-preview-panel sachsen-final-preview-panel col-12">
+            <div class="sachsen-preview-card">
+                <h4 class="fw-bold mb-0">{% t left.preview %}</h4>
+            </div>
+
+            <div class="sachsen-municipality-card">
+                <h5 id="final-munname" class="fw-bold mb-1"></h5>
+                <p id="final-munemail" class="mb-0 me-1 d-inline-block"></p>
+                <button class="btn copy p-0 d-inline-block" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="{% t right.message.copied %}"
+                    data-clipboard-target="#final-munemail">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="sachsen-letter-card">
+                {% include app/step-3-letter.html %}
+            </div>
+        </div>
+
+        <div id="sachsen-share-cta" class="sachsen-share-cta col-12" aria-live="polite">
+            <div class="sachsen-share-primary">
+                <h2>{% t sachsen_anhalt.share_cta.title %}</h2>
+                <p class="sachsen-share-copy">
+                    {% t sachsen_anhalt.share_cta.text_1 %}
+                </p>
+                <p class="sachsen-share-copy">
+                    {% t sachsen_anhalt.share_cta.text_2 %}
+                </p>
+                <div class="sachsen-share-actions" aria-label="{% t left.share %}">
+                    <a class="copy" data-clipboard-text="{% t sachsen_anhalt.sharing.copy %}" href="#"
+                        data-bs-placement="top" data-bs-toggle="tooltip" title="{% t right.message.sharecopy %}">
+                        <i class="far fa-copy"></i>
+                    </a>
+                    <a
+                        href="mailto:?subject={% t sachsen_anhalt.sharing.email.subject %}&amp;body={% t sachsen_anhalt.sharing.email.body %}">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://facebook.com/sharer/sharer.php?u={{ page.share_url }}" target="_blank"
+                        rel="noreferrer nopener">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://bsky.app/intent/compose?text={% t sachsen_anhalt.sharing.bluesky %}" target="_blank"
+                        rel="noreferrer nopener">
+                        <i class="fa-brands fa-bluesky"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.share_url }}"
+                        target="_blank" rel="noreferrer nopener">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://t.me/share/url?text={% t sachsen_anhalt.sharing.telegram %}&amp;url={{ page.share_url }}"
+                        target="_blank" rel="noreferrer nopener">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </a>
+                    <a href="https://wa.me/?text={% t sachsen_anhalt.sharing.whatsapp %}" target="_blank"
+                        rel="noreferrer nopener">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="sachsen-share-donate">
+                <p class="sachsen-share-donate-text">{% t left.donateTitle %}</p>
+                <a class="sachsen-share-donate-button" href="{{ site.donate_url }}">{% t left.donateButton %}</a>
+            </div>
+            <div class="sachsen-share-footer">
+                <div class="sachsen-share-nav">
+                    <a href="{{ site.baseurl }}/about.html">{% t left.about %}</a>
+                    <a href="{{ site.baseurl }}/faq.html">{% t left.faq %}</a>
+                    <a href="{{ site.donate_url }}">{% t left.donate %}</a>
+                    <a href="{{ site.bluesky }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-bluesky"></i></a>
+                    <a href="{{ site.linkedin }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="{{ site.instagram }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="sachsen-share-legal">
+                    <p class="mb-0">
+                        <i>
+                            <small>
+                                {% t left.about_bottom %}
+                                <a href="{{ site.imprint_url }}">{% t left.imprint %}</a>
+                                <a href="{{ site.baseurl }}/terms.html" target="_blank" rel="noopener">{% t terms.right.title %}</a>
+                            </small>
+                        </i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {% include app/address-mobile.html %}
+
+        <div id="outro" class="col-12 outro mb-5 sachsen-outro-panel">
+            {% include {{ page.app_outro }} %}
+        </div>
+
+        {% include app/preview-mobile.html %}
+
+        <div class="d-block d-lg-none mt-5 scrollIndicator">
+            <div class="container">
+                <div class="text-center">
+                    <a href="#right-side" alt="Scroll down"><i class="fas fa-2x fa-chevron-down"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
