@@ -1,11 +1,12 @@
-<div id="navbar-mobile" class="overlay">
+<div id="navbar-mobile" class="overlay" role="dialog" aria-modal="true"
+    aria-label="{% t nav.navigation %}" aria-hidden="true" inert>
     <div class="container-fluid pt-5 px-2 px-lg-4">
         <div class="container">
             <div class="d-flex justify-content-between">
                 {% if page.disable_translations != true %}
                     <div class="dropdown">
                         <button class="dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                            aria-expanded="false" aria-label="Select language" lang="en">
                             <i class="fas fa-globe me-1"></i>
                             {% for lang in site.languages %}
                             {% assign lang_name = site.data[lang].l10n.lang_name %}
@@ -28,23 +29,25 @@
                         </ul>
                     </div>
                 {% endif %}
-                <button class="closebtn" onclick="closeNav()">{% t nav.close %}<span class="ms-2">X</span></button>
+                <button class="closebtn" type="button" id="mobile-nav-close" onclick="closeNav()">
+                    {% t nav.close %}<span class="ms-2" aria-hidden="true">&#10005;</span>
+                </button>
             </div>
         </div>
     </div>
 
-    <div class="overlay-content">
+    <nav class="overlay-content" aria-label="{% t nav.navigation %}">
         <a href="{{ site.baseurl }}/">{% t left.home %}</a>
         <a href="{{ site.baseurl }}/about.html">{% t left.about %}</a>
         <a href="{{ site.baseurl }}/faq.html">{% t left.faq %}</a>
         <a href="{{ site.donate_url }}">{% t left.donate %}</a>
-    </div>
+    </nav>
 
     <div class="overlay-footer">
         <div class="social-links">
-            <a href="{{ site.bluesky }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-bluesky"></i></a>
-            <a href="{{ site.linkedin }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="{{ site.instagram }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-instagram"></i></a>
+            <a href="{{ site.bluesky }}" target="_blank" rel="noreferrer nopener" title="BlueSky"><i class="fa-brands fa-bluesky"></i></a>
+            <a href="{{ site.linkedin }}" target="_blank" rel="noreferrer nopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="{{ site.instagram }}" target="_blank" rel="noreferrer nopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
         <p class="mb-0 mt-4">
             <small>
@@ -55,15 +58,56 @@
 </div>
 
 <script>
+    let mobileNavPreviousOverflow = "";
+
     function openNav() {
-        document.getElementById("navbar-mobile").style.height = "100%";
-        document.documentElement.style.overflow = 'hidden';
-        document.body.scroll = "no";
+        const menu = document.getElementById("navbar-mobile");
+        const openButton = document.getElementById("mobile-nav-toggle");
+
+        mobileNavPreviousOverflow = document.documentElement.style.overflow;
+        menu.removeAttribute("inert");
+        menu.setAttribute("aria-hidden", "false");
+        menu.style.height = "100%";
+        openButton.setAttribute("aria-expanded", "true");
+        document.documentElement.style.overflow = "hidden";
+        document.getElementById("mobile-nav-close").focus();
     }
 
-    function closeNav() {
-        document.getElementById("navbar-mobile").style.height = "0%";
-        document.documentElement.style.overflow = 'scroll';
-        document.body.scroll = "yes";
+    function closeNav(restoreFocus = true) {
+        const menu = document.getElementById("navbar-mobile");
+        const openButton = document.getElementById("mobile-nav-toggle");
+
+        menu.style.height = "0%";
+        menu.setAttribute("aria-hidden", "true");
+        menu.setAttribute("inert", "");
+        openButton.setAttribute("aria-expanded", "false");
+        document.documentElement.style.overflow = mobileNavPreviousOverflow;
+        if (restoreFocus) openButton.focus();
     }
+
+    document.getElementById("navbar-mobile").addEventListener("keydown", (event) => {
+        const menu = event.currentTarget;
+
+        if (event.key === "Escape") {
+            event.preventDefault();
+            closeNav();
+            return;
+        }
+
+        if (event.key !== "Tab") return;
+
+        const focusableElements = Array.from(menu.querySelectorAll(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )).filter((element) => element.getClientRects().length > 0);
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
+        }
+    });
 </script>

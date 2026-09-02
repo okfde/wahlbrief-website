@@ -40,6 +40,7 @@ right:
   zipcode: "PLZ"
   invalidZipcode: "Ungültige Postleitzahl"
   zipNotFound: "Die Postleitzahl scheint für diese Wahl nicht relevant zu sein."
+  zipSuggestions: "Vorschläge für Postleitzahl und Ort"
   city: "Ort"
   state: "Land"
   email: "E-Mail-Adresse"
@@ -74,10 +75,12 @@ right:
   preview-address: "Address goes here. Lorem ipsum 65124"
   subject: "Antrag auf Briefwahlunterlagen"
   send: "E-Mail senden"
+  sendScreenreader: "In Mailprogramm öffnen"
   copy: "Text kopieren"
   back: "Zurück"
   message:
     sharecopy: "Kopiert"
+    copyAddress: "Adresse kopieren"
     copied: "Adresse kopiert"
     success: "Text kopiert. Jetzt im E-Mail-Programm einfügen und an die oben genannte E-Mail-Adresse des Wahlamts versenden."
     sent: "Der Antrag sollte sich im E-Mail-Programm geöffnet haben. Nur noch versenden."
@@ -122,7 +125,7 @@ questions:
   - title: "Wer kann Briefwahl beantragen?"
     answer: "Jede Person, die stimmberechtigt ist, kann ohne Angabe von Gründen per Briefwahl statt persönlich im Wahllokal wählen."
   - title: "Welche Fristen gibt es zu beachten?"
-    answer: "Die Briefwahlunterlagen können im Voraus beantragt werden, auch wenn noch keine Wahlbenachrichtigung vorliegt. Die Bundeswahlleiterinempfiehlt sogar, die Briefwahl so frühzeitig wie möglich zu beantragen. Solange der Wahlbrief mit der abgegebenen Stimme rechtzeitig zum Wahltag eingeht, wird die Stimme mitgezählt. Spätestens sollte der Wahlbrief am dritten Werktag vor der Wahl in die Post gegeben werden – also in der Regel am Donnerstag vor dem Wahl-Sonntag. Bei Briefwahl aus dem Ausland dauert die Zustellung länger, das sollte berücksichtigt werden. Alternativ kann der Wahlbrief auch bei der auf dem Wahlbriefumschlag angegebenen Stelle abgegeben werden. Er muss bei der zuständigen Stelle spätestens am Wahlsonntag bis 18:00 Uhr eingehen."  
+    answer: "Die Briefwahlunterlagen können im Voraus beantragt werden, auch wenn noch keine Wahlbenachrichtigung vorliegt. Die Bundeswahlleiterinempfiehlt sogar, die Briefwahl so frühzeitig wie möglich zu beantragen. Solange der Wahlbrief mit der abgegebenen Stimme rechtzeitig zum Wahltag eingeht, wird die Stimme mitgezählt. Spätestens sollte der Wahlbrief am dritten Werktag vor der Wahl in die Post gegeben werden – also in der Regel am Donnerstag vor dem Wahl-Sonntag. Bei Briefwahl aus dem Ausland dauert die Zustellung länger, das sollte berücksichtigt werden. Alternativ kann der Wahlbrief auch bei der auf dem Wahlbriefumschlag angegebenen Stelle abgegeben werden. Er muss bei der zuständigen Stelle spätestens am Wahlsonntag bis 18:00 Uhr eingehen."
   - title: "Wann kann ich mit den Unterlagen rechnen?"
     answer: "Die Unterlagen werden meistens wenige Werktage nach Eingang deines Antrags beim Wahlamt versandt. Der Versand der Briefwahlunterlagen ist aber erst nach endgültiger Zulassung der Wahlvorschläge und dem Druck der Stimmzettel möglich, also nicht schon Monate im Voraus."
   - title: "Muss ich für den Wahlbrief Porto zahlen?"
@@ -137,6 +140,8 @@ questions:
     answer: "Das ist möglich und dann sinnvoll, vor allem wenn die Briefwahlunterlagen erst am Tag vor oder am Tag der Wahl ausgefüllt werden. Der Brief muss bis zur Schließung der Wahllokale beim Wahlamt eingegangen sein."
   - title: "Wie geht es nach meinem Antrag auf Briefwahl weiter?"
     answer: "Die Briefwahlunterlagen werden in der Regel innerhalb weniger Werktage an die angegebene Adresse versandt, sobald die Wahlvorschläge zugelassen und die Stimmzettel gedruckt sind."
+  - title: "Wie kann ich als sehbehinderte Person barrierefrei wählen?"
+    answer: "Wenn du Mitglied im Deutschen Blinden- und Sehbehindertenverband bist, bekommst du die barrierefreien Wahl-Schablonen automatisch zugeschickt. Wenn du kein Mitglied bist, kannst du diese auch per E-Mail an den für dich zuständigen Landes-Verein anfordern. Mehr Informationen gibt es auch unter www.dbsv.org/wahlen."
 imprint:
   left:
     title: "Offizielle Angaben"
@@ -190,3 +195,6 @@ donate:
     text: ""
 nav:
   close: "Schließen"
+  open: "Menü öffnen"
+  navigation: "Seitennavigation"
+  skip: "Zum Inhalt springen"

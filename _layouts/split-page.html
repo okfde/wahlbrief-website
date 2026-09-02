@@ -5,19 +5,19 @@ layout: default
 <div class="container-fluid h-100">
     <div class="row h-100">
         {% include {{ page.sidebar }} %}
-        <div class="col-md-12 col-lg-6">
+        <main id="main-content" tabindex="-1" class="col-md-12 col-lg-6">
             <div class="container d-flex flex-column h-100 py-5 px-2 px-lg-4">
                 <div class="row h-100 d-flex justify-content-between">
                     <div class="col-12">
                         {{ content }}
                     </div>
-                    <p class="mb-0 mt-4 d-block d-lg-none">
+                    <footer class="mb-0 mt-4 d-block d-lg-none" role="contentinfo">
                         <small>
                             {% t left.about_bottom %}
                         </small>
-                    </p>
+                    </footer>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 </div>

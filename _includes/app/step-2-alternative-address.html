@@ -4,20 +4,18 @@
         <div class="col-12 col-lg-6 mb-3 mb-lg-0">
             <div class="form-floating">
                 <input type="text" class="form-control" id="form-newname"
+                    autocomplete="shipping given-name"
                     pattern="^[a-zA-Z-,.\säöüÄÖÜß]{2,}$" maxlength="60"
-                    placeholder="{% t right.shipping.name %}"
-                    aria-label="{% t right.shipping.name %}"
-                    aria-describedby="{% t right.shipping.name %}">
+                    placeholder="{% t right.shipping.name %}">
                 <label for="form-newname">{% t right.shipping.name %}</label>
             </div>
         </div>
         <div class="col-12 col-lg-6">
             <div class="form-floating">
                 <input type="text" class="form-control" id="form-newsurname"
+                    autocomplete="shipping family-name"
                     pattern="^[a-zA-Z-,.\säöüÄÖÜß\/]{2,}$" maxlength="60"
-                    placeholder="{% t right.shipping.surname %}"
-                    aria-label="{% t right.shipping.surname %}"
-                    aria-describedby="{% t right.shipping.surname %}">
+                    placeholder="{% t right.shipping.surname %}">
                 <label for="form-newsurname">{% t right.shipping.surname %}</label>
             </div>
         </div>
@@ -26,10 +24,9 @@
         <div class="col-12 col-lg-12 mb-0">
             <div class="form-floating">
                 <input type="text" class="form-control" id="form-address"
+                    autocomplete="shipping address-line2"
                     maxlength="60"
-                    placeholder="{% t right.shipping.adresszusatz %}"
-                    aria-label="{% t right.shipping.adresszusatz %}"
-                    aria-describedby="{% t right.shipping.adresszusatz %}">
+                    placeholder="{% t right.shipping.adresszusatz %}">
                 <label for="form-address">{% t right.shipping.adresszusatz
                     %}</label>
             </div>
@@ -39,10 +36,9 @@
         <div class="col-12 col-lg-12 mb-0">
             <div class="form-floating">
                 <input type="text" class="form-control" id="form-newstreet"
+                    autocomplete="shipping street-address"
                     maxlength="60"
-                    placeholder="{% t right.shipping.street %}"
-                    aria-label="{% t right.shipping.street %}"
-                    aria-describedby="{% t right.shipping.street %}">
+                    placeholder="{% t right.shipping.street %}">
                 <label for="form-newstreet">{% t right.shipping.street %}</label>
             </div>
         </div>
@@ -54,20 +50,18 @@
                     onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
                     oninput="this.value=this.value.slice(0,this.maxLength)"
                     inputmode="numeric" class="form-control" id="form-newzip"
+                    autocomplete="shipping postal-code"
                     minlength="5" maxlength="5" pattern="[0-9]{5}"
-                    placeholder="{% t right.shipping.zipcode %}"
-                    aria-label="{% t right.shipping.zipcode %}"
-                    aria-describedby="{% t right.shipping.zipcode %}">
+                    placeholder="{% t right.shipping.zipcode %}">
                 <label for="form-newzip">{% t right.shipping.zipcode %}</label>
             </div>
         </div>
         <div class="col-12 col-lg-9">
             <div class="form-floating">
                 <input type="text" class="form-control" id="form-newcity"
+                    autocomplete="shipping address-level2"
                     minlength="2" maxlength="60"
-                    placeholder="{% t right.shipping.city %}"
-                    aria-label="{% t right.shipping.city %}"
-                    aria-describedby="{% t right.shipping.city %}">
+                    placeholder="{% t right.shipping.city %}">
                 <label for="form-newcity">{% t right.shipping.city %}</label>
             </div>
         </div>

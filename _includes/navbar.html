@@ -1,90 +1,129 @@
-<div class="row mb-4 mb-lg-5">
-    <div class="col-12">
-        <div class="navbar navbar-expand-xl justify-content-between align-items-center">
-            <div class="logos">
-                {% if page.partner_logo %}
-                    <div class="logo">
-                        <img src="{{ site.baseurl_root }}{{ page.partner_logo }}"
-                            alt="{{ page.partner_name}} logo">
-                    </div>
-                {% endif %}
-                {% if page.data %}
-                <div class="logo">
-                    <img src="{{ site.baseurl_root }}/assets/images/wahlbrief.svg"
-                            alt="FragDenStaat logo">
-                </div>
-                {% else %}
-                    <div class="logo">
-                        <a href="{{ site.baseurl }}/">
-                            <img src="{{ site.baseurl_root }}/assets/images/wahlbrief.svg"
-                            alt="FragDenStaat logo">
-                        </a>
-                    </div>
-                {% endif %}
-            </div>
-            {% if page.disable_translations != true %}
-                <div class="d-flex d-lg-none align-items-center justify-content-between">
-                    <div class="dropdown">
-                        <button class="dropdown-toggle top-item" type="button" id="dropdownMenu3"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1"></i>
-                            {% for lang in site.languages %}
-                            {% assign lang_short = site.data[lang].l10n.lang_short %}
-                            {% if lang == site.lang %}
-                            {{ lang_short }}
-                            {% endif %}
-                            {% endfor %}
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                            {% for lang in site.languages %}
-                            {% assign lang_name = site.data[lang].l10n.lang_name %}
-                            {% if lang == site.default_lang %}
-                            <li><a class="dropdown-item" href="{{ site.baseurl_root }}{{ page.url }}">{{
-                                    lang_name }}</a></li>
-                            {% else %}
-                            <li><a class="dropdown-item"
-                                    href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{{ lang_name
-                                    }}</a></li>
-                            {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="d-lg-block d-none">
-                    <div class="dropdown">
-                        <button class="dropdown-toggle" type="button" id="dropdownMenu"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1"></i>
-                            {% for lang in site.languages %}
-                            {% assign lang_name = site.data[lang].l10n.lang_name %}
-                            {% if lang == site.lang %}
-                            {{ lang_name }}
-                            {% endif %}
-                            {% endfor %}
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                            {% for lang in site.languages %}
-                            {% assign lang_name = site.data[lang].l10n.lang_name %}
-                            {% if lang == site.default_lang %}
-                            <li><a class="dropdown-item" href="{{ site.baseurl_root }}{{ page.url }}">{{
-                                    lang_name }}</a></li>
-                            {% else %}
-                            <li><a class="dropdown-item"
-                                    href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{{ lang_name
-                                    }}</a></li>
-                            {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            {% endif %}
-
-            <div class="d-lg-none">
-                <button class="navbar-toggler" onclick="openNav()"><img
-                        src="{{ site.baseurl_root }}/assets/images/burger.svg"></button>
-                {% include nav-mobile.html %}
-            </div>
+<header class="row mb-4 mb-lg-5">
+  <div class="col-12">
+    <div
+      class="navbar navbar-expand-xl justify-content-between align-items-center"
+    >
+      <div class="logos">
+        {% if page.partner_logo %}
+        <div class="logo">
+          <img
+            src="{{ site.baseurl_root }}{{ page.partner_logo }}"
+            alt="{{ page.partner_name}} logo"
+          />
         </div>
+        {% endif %} {% if page.data %}
+        <div class="logo">
+          <img
+            src="{{ site.baseurl_root }}/assets/images/wahlbrief.svg"
+            alt="FragDenStaat logo"
+          />
+        </div>
+        {% else %}
+        <div class="logo">
+          <a href="{{ site.baseurl }}/">
+            <img
+              src="{{ site.baseurl_root }}/assets/images/wahlbrief.svg"
+              alt="FragDenStaat logo"
+            />
+          </a>
+        </div>
+        {% endif %}
+      </div>
+      {% if page.disable_translations != true %}
+      <div class="d-flex d-lg-none align-items-center justify-content-between">
+        <div class="dropdown">
+          <button
+            class="dropdown-toggle top-item"
+            type="button"
+            id="dropdownMenu3"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            aria-label="Select language"
+            lang="en"
+          >
+            <i class="fas fa-globe me-1"></i>
+            {% for lang in site.languages %} {% assign lang_short =
+            site.data[lang].l10n.lang_short %} {% if lang == site.lang %} {{
+            lang_short }} {% endif %} {% endfor %}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+            {% for lang in site.languages %} {% assign lang_name =
+            site.data[lang].l10n.lang_name %} {% if lang == site.default_lang %}
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ site.baseurl_root }}{{ page.url }}"
+                >{{ lang_name }}</a
+              >
+            </li>
+            {% else %}
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}"
+                >{{ lang_name }}</a
+              >
+            </li>
+            {% endif %} {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-lg-block d-none">
+        <div class="dropdown">
+          <button
+            class="dropdown-toggle"
+            type="button"
+            id="dropdownMenu"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-globe me-1"></i>
+            {% for lang in site.languages %} {% assign lang_name =
+            site.data[lang].l10n.lang_name %} {% if lang == site.lang %} {{
+            lang_name }} {% endif %} {% endfor %}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+            {% for lang in site.languages %} {% assign lang_name =
+            site.data[lang].l10n.lang_name %} {% if lang == site.default_lang %}
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ site.baseurl_root }}{{ page.url }}"
+                >{{ lang_name }}</a
+              >
+            </li>
+            {% else %}
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}"
+                >{{ lang_name }}</a
+              >
+            </li>
+            {% endif %} {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="d-lg-none">
+        <button
+          class="navbar-toggler"
+          type="button"
+          id="mobile-nav-toggle"
+          onclick="openNav()"
+          aria-label="{% t nav.open %}"
+          aria-controls="navbar-mobile"
+          aria-expanded="false"
+        >
+          <img
+            src="{{ site.baseurl_root }}/assets/images/burger.svg"
+            aria-hidden="true"
+          />
+        </button>
+        {% include nav-mobile.html %}
+      </div>
     </div>
-</div>
+  </div>
+</header>

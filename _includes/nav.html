@@ -1,4 +1,5 @@
-<div class="row justify-content-between align-items-center mb-3 mt-4">
+<nav class="row justify-content-between align-items-center mb-3 mt-4"
+    aria-label="{% t nav.navigation %}">
     <div class="col-12 col-lg-9 mb-2 mb-md-0">
         <div class="d-flex flex-wrap justify-content-start pages">
             <a class="me-3" href="{{ site.baseurl }}/about.html">{% t left.about %}</a>
@@ -8,9 +9,9 @@
     </div>
     <div class="col-12 col-lg-3">
         <div class="d-flex justify-content-center justify-content-xl-end social-links">
-            <a href="{{ site.bluesky }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-bluesky"></i></a>
-            <a href="{{ site.linkedin }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="{{ site.instagram }}" target="_blank" rel="noreferrer nopener"><i class="fa-brands fa-instagram"></i></a>
+            <a href="{{ site.bluesky }}" target="_blank" rel="noreferrer nopener" title="BlueSky"><i class="fa-brands fa-bluesky"></i></a>
+            <a href="{{ site.linkedin }}" target="_blank" rel="noreferrer nopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="{{ site.instagram }}" target="_blank" rel="noreferrer nopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </div>
-</div>
+</nav>

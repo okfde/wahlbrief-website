@@ -9,15 +9,16 @@
             <p id="subject">{% t right.subject %}</p>
         </div>
 
-        <p class="mb-0 mt-4" id="final-message">
+        <p class="mb-0 mt-4" id="final-message" role="status">
             <i class='fas fa-info-circle me-2'></i>
             {% t right.message.intro %}
         </p>
 
         <div class="row py-4 justify-content-center align-items-center">
             <div class="col-12 col-lg-6 mb-3 mb-lg-0">
-                <a id="send-email" href="#" class="btn-send" target="mailto">
+                <a id="send-email" href="#" class="btn-send" target="mailto" role="button">
                     <i class="fas fa-paper-plane me-2"></i>{% t right.send %}
+                    <span class="visually-hidden"> ({% t right.sendScreenreader %})</span>
                 </a>
                 <iframe name="mailto" src="about:blank" style="display:none;"></iframe>
             </div>
@@ -34,8 +35,8 @@
             <p id="final-munemail" class="mb-0 me-1 d-inline-block"></p>
             <button class="btn copy p-0 d-inline-block" data-bs-toggle="tooltip"
                 data-bs-placement="top" title="{% t right.message.copied %}"
-                data-clipboard-target="#final-munemail">
-                <i class="far fa-copy"></i>
+                aria-label="{% t right.message.copyAddress %}" data-clipboard-target="#final-munemail">
+                <i class="far fa-copy" aria-hidden="true"></i>
             </button>
         </div>
 

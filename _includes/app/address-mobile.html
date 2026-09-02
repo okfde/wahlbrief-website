@@ -9,8 +9,9 @@
         <h4 id="muniname" class="fw-bold mb-0"></h4>
         <p id="muniemail" class="mb-0 me-1 d-inline-block"></p>
         <button class="btn copy p-0 d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top"
-            title="{% t right.message.copied %}" data-clipboard-target="#muniemail">
-            <i class="far fa-copy"></i>
+            title="{% t right.message.copied %}" aria-label="{% t right.message.copyAddress %}"
+            data-clipboard-target="#muniemail">
+            <i class="far fa-copy" aria-hidden="true"></i>
         </button>
     </div>
 </div>

@@ -96,6 +96,15 @@ function validateInput(inputElement, regex) {
   if (inputElement) {
     const isValid = regex.test(inputElement.value);
     inputElement.classList.toggle("is-invalid", !isValid);
+    setAriaInvalid(inputElement, !isValid);
+  }
+}
+
+function setAriaInvalid(inputElement, isInvalid) {
+  if (isInvalid) {
+    inputElement.setAttribute("aria-invalid", "true");
+  } else {
+    inputElement.removeAttribute("aria-invalid");
   }
 }
 
@@ -459,6 +468,7 @@ elements.allBirthdayInputs.forEach((input) => {
     const allValid = elements.allBirthdayInputs.every(
       (inp) => inp && inp.validity.valid && inp.value.length > 0
     );
+    let invalidDate = false;
 
     // Add the custom validation for the election date
     if (allValid) {
@@ -467,9 +477,18 @@ elements.allBirthdayInputs.forEach((input) => {
       const year = parseInt(formValues.year, 10);
 
       if (!isValidBirthday(day, month, year)) {
-        elements.birthdayForm.style.boxShadow = "0 0 0 0.15rem red";
-        return;
+        invalidDate = true;
       }
+    }
+
+    elements.allBirthdayInputs.forEach((birthdayInput) => {
+      const isInvalid = birthdayInput.value.length > 0 && !birthdayInput.validity.valid;
+      setAriaInvalid(birthdayInput, isInvalid || invalidDate);
+    });
+
+    if (invalidDate) {
+      elements.birthdayForm.style.boxShadow = "0 0 0 0.15rem red";
+      return;
     }
 
     elements.birthdayForm.style.boxShadow = allValid
@@ -481,7 +500,7 @@ elements.allBirthdayInputs.forEach((input) => {
 // --- Navigation Functions ---
 
 function scrollTop() {
-  document.getElementById("right-side").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
+  document.getElementById("main-content").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
 }
 
 window.addEventListener("popstate", (event) => {
@@ -497,9 +516,6 @@ function navigateTo(step, nohistory) {
 
   const tab = new bootstrap.Tab(document.querySelector(`#step-${step}-tab`));
   tab.show();
-  window.setTimeout(() => {
-    scrollTop()
-  }, 200)
 
   // Update element visibility based on step and screen size
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
@@ -533,6 +549,20 @@ function navigateTo(step, nohistory) {
       setDisplayStyle(elements.outroBottom, isMobile ? "block" : "none");
       break;
   }
+
+  window.setTimeout(() => {
+    scrollTop()
+    const heading = isMobile && step === 2
+      ? elements.addressMobile.querySelector("h2")
+      : isMobile && step === 3
+        ? elements.previewMobile.querySelector("h2")
+        : document.querySelector(`#step-${step} h2`)
+
+    if (heading) {
+      heading.setAttribute("tabindex", "-1")
+      heading.focus()
+    }
+  }, 200)
 }
 
 function getPostcodeValues() {
@@ -549,9 +579,12 @@ function getPostcodeValues() {
 }
 
 function secondpage() {
+  onEnter(); // Select an active or unambiguous suggestion first.
   const data = getPostcodeValues()
+  const isValid = data.zip.length >= 5 && is_valid_datalist_value(data.zip, data.city)
+  setAriaInvalid(elements.searchInput, !isValid)
 
-  if (data.zip.length >= 5 && is_valid_datalist_value(data.zip, data.city)) {
+  if (isValid) {
     navigateTo(2);
     _paq.push(['trackGoal', 1]);
   }
@@ -583,7 +616,6 @@ let selectedPlace = null
 let selectedElection
 
 function is_valid_datalist_value(inputValue, cityValue) {
-  onEnter(); // Selects the item even if suggestion is not selected
   const filtered = zips.filter(
     (item) =>
       item.PLZ.toString() == inputValue &&
@@ -675,46 +707,48 @@ function is_valid_datalist_value(inputValue, cityValue) {
 let activeSuggestionIndex = -1;
 
 function setFocusOnSuggestion() {
-  const suggestionItems = Array.from(elements.suggestions.children);
+  const suggestionItems = Array.from(elements.suggestions.querySelectorAll('[role="option"]'));
   const numSuggestions = suggestionItems.length;
 
   if (numSuggestions === 0) return;
 
   if (activeSuggestionIndex >= 0) {
-    activeSuggestionIndex %= numSuggestions;
-    suggestionItems.forEach((child) =>
-      child.classList.remove("autocomplete-active")
-    );
-    suggestionItems[activeSuggestionIndex].classList.add("autocomplete-active");
+    activeSuggestionIndex = activeSuggestionIndex % numSuggestions;
+    suggestionItems.forEach((child) => {
+      child.classList.remove("autocomplete-active");
+      child.setAttribute("aria-selected", "false");
+    });
+    const activeSuggestion = suggestionItems[activeSuggestionIndex];
+    activeSuggestion.classList.add("autocomplete-active");
+    activeSuggestion.setAttribute("aria-selected", "true");
+    elements.searchInput.setAttribute("aria-activedescendant", activeSuggestion.id);
   }
 }
 
 function onEnter() {
-  const suggestionItems = Array.from(elements.suggestions.children);
+  const suggestionItems = Array.from(elements.suggestions.querySelectorAll('[role="option"]'));
   const numSuggestions = suggestionItems.length;
 
   if (numSuggestions === 0) return;
 
-  if (numSuggestions === 1) {
-    activeSuggestionIndex %= numSuggestions;
-    suggestionItems[activeSuggestionIndex].click();
-    setTimeout(secondpage, 300);
+  if (numSuggestions === 1 && activeSuggestionIndex < 0) {
+    activeSuggestionIndex = 0;
   }
 
-  if (activeSuggestionIndex > 1) {
-    activeSuggestionIndex %= numSuggestions;
+  if (activeSuggestionIndex >= 0) {
+    activeSuggestionIndex = activeSuggestionIndex % numSuggestions;
     suggestionItems[activeSuggestionIndex].click();
-    elements.searchInput.addEventListener("keyup", (e) => {
-      if (e.keyCode === 13) {
-        e.target.removeEventListener("keyup", arguments.callee);
-        secondpage();
-        activeSuggestionIndex = -1;
-      }
-    });
+    activeSuggestionIndex = -1;
   }
 }
 
 let suggestionTimeout;
+
+elements.searchInput?.addEventListener("keydown", (e) => {
+  if (["ArrowDown", "ArrowUp", "Enter"].includes(e.key) && elements.searchInput.getAttribute("aria-expanded") === "true") {
+    e.preventDefault();
+  }
+});
 
 elements.searchInput?.addEventListener("keyup", (e) => {
   suggestionTimeout && clearTimeout(suggestionTimeout);
@@ -726,60 +760,75 @@ elements.searchInput?.addEventListener("keyup", (e) => {
         setFocusOnSuggestion();
         return;
       case 38: // Up arrow
-        activeSuggestionIndex--;
+        activeSuggestionIndex = activeSuggestionIndex <= 0
+          ? elements.suggestions.children.length - 1
+          : activeSuggestionIndex - 1;
         setFocusOnSuggestion();
         return;
       case 13: // Enter
-        onEnter();
+        secondpage();
         return;
       case 27: // Escape
-        e.target.value = "";
         elements.suggestions.innerHTML = "";
+        elements.searchInput.setAttribute("aria-expanded", "false");
+        elements.searchInput.removeAttribute("aria-activedescendant");
         return;
     }
 
     activeSuggestionIndex = -1;
+    elements.searchInput.removeAttribute("aria-activedescendant");
 
     if (!e.target.value) {
       elements.suggestions.innerHTML = "";
+      elements.searchInput.setAttribute("aria-expanded", "false");
       return;
     }
 
     const matchArray = findMatches(e.target.value, zips);
-    const suggestionDivs = matchArray.map((place) => {
+    const suggestionDivs = matchArray.map((place, index) => {
       const div = document.createElement("div");
       const nameSpan = document.createElement("span");
       const value = `${place.PLZ} ${place.ORT}`;
 
+      div.id = `autocomplete-option-${index}`;
+      div.setAttribute("role", "option");
+      div.setAttribute("aria-selected", "false");
       nameSpan.innerText = value;
       div.appendChild(nameSpan);
-
-      elements.searchInput.scrollIntoView();
 
       div.addEventListener("click", () => {
         elements.searchInput.value = value;
         selectedEmail = place["E-Mail"];
         selectedPlace = place
         elements.suggestions.innerHTML = "";
+        setAriaInvalid(elements.searchInput, false);
+        elements.searchInput.setAttribute("aria-expanded", "false");
+        elements.searchInput.removeAttribute("aria-activedescendant");
       });
 
       return div;
     });
 
     if (pageData && pageData.limitArs && matchArray.length <= 0) {
-        elements.suggestions.innerHTML =
-          "<div class='error'><i class='fas fa-times-circle me-2'></i><span>" + getTranslation("right.zipNotFound") + "</span></div>";
+      elements.suggestions.innerHTML =
+        "<div class='error' role='alert'><i class='fas fa-times-circle me-2' aria-hidden='true'></i><span>" + getTranslation("right.zipNotFound") + "</span></div>";
+      setAriaInvalid(elements.searchInput, true);
+      elements.searchInput.setAttribute("aria-expanded", "false");
       return;
     }
 
     if (matchArray.length <= 0) {
-        elements.suggestions.innerHTML =
-          "<div class='error'><i class='fas fa-times-circle me-2'></i><span>" + getTranslation("right.invalidZipcode") + "</span></div>";
+      elements.suggestions.innerHTML =
+        "<div class='error' role='alert'><i class='fas fa-times-circle me-2' aria-hidden='true'></i><span>" + getTranslation("right.invalidZipcode") + "</span></div>";
+      setAriaInvalid(elements.searchInput, true);
+      elements.searchInput.setAttribute("aria-expanded", "false");
       return;
     }
 
+    setAriaInvalid(elements.searchInput, false);
     elements.suggestions.innerHTML = "";
     elements.suggestions.append(...suggestionDivs);
+    elements.searchInput.setAttribute("aria-expanded", "true");
   }, 50);
 });
 
@@ -972,9 +1021,20 @@ if (elements.newsletter) {
     } else {
       elements.email.removeAttribute("required")
     }
+    setAriaInvalid(elements.email, !elements.email.validity.valid)
   })
 }
 if (elements.mainform) {
+  elements.mainform.addEventListener("invalid", (e) => {
+    setAriaInvalid(e.target, true)
+  }, true)
+
+  elements.mainform.addEventListener("input", (e) => {
+    if (e.target.validity && !elements.allBirthdayInputs.includes(e.target)) {
+      setAriaInvalid(e.target, !e.target.validity.valid)
+    }
+  })
+
   elements.mainform.addEventListener("submit", (e) => {
     e.preventDefault()
     if (!elements.mainform.checkValidity()) {

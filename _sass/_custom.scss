@@ -17,6 +17,24 @@ body {
   color: $gray-900;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1100;
+  padding: 0.75rem 1rem;
+  color: $white;
+  background-color: $secondary;
+  transform: translateY(calc(-100% - 1rem));
+
+  &:focus {
+    color: $white;
+    outline: 0.2rem solid $white;
+    outline-offset: 0.15rem;
+    transform: translateY(0);
+  }
+}
+
 .faded {
   animation: fadein 1s;
 }
@@ -190,6 +208,12 @@ a {
   outline: none;
   background: transparent;
   border-radius: 0.25rem;
+}
+
+#dropdownMenu2:focus-visible,
+#dropdownMenu3:focus-visible {
+  outline: 0.2rem solid currentColor;
+  outline-offset: 0.15rem;
 }
 
 .background-white {
@@ -505,6 +529,8 @@ input[type="number"] {
   }
   &-active {
     background-color: lighten($secondary, 55%) !important;
+    outline: 0.2rem solid #094f9e;
+    outline-offset: -0.2rem;
   }
 }
 

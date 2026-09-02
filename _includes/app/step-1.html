@@ -11,7 +11,8 @@
                 onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
                 class="form-control" minlength="9" maxlength="120"
                 placeholder="{% t right.placeholder %}" aria-label="{% t right.placeholder %}"
-                aria-describedby="{% t right.placeholder %}">
+                role="combobox" aria-autocomplete="list" aria-expanded="false"
+                aria-controls="autocomplete-list">
             <label for="zipcode">{% t right.placeholder %}</label>
 
             <div class="input-group-append d-none d-xxl-inline-block">
@@ -22,7 +23,8 @@
             </div>
         </div>
 
-        <div class="autocomplete-items" id="autocomplete-list">
+        <div class="autocomplete-items" id="autocomplete-list" role="listbox"
+            aria-label="{% t right.zipSuggestions %}">
         </div>
 
         <button id="next-click" onclick="secondpage();"

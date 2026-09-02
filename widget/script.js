@@ -74,6 +74,7 @@
     if (matches.length === 0) {
       const error = document.createElement("div");
       error.className = "error";
+      error.setAttribute("role", "alert");
       error.textContent = "Ungültige Postleitzahl";
       dom.suggestions.appendChild(error);
       return;
@@ -163,7 +164,7 @@
     } catch (error) {
       console.error("Initialization error:", error);
       dom.suggestions.innerHTML =
-        '<div class="error">Daten konnten nicht geladen werden</div>';
+        '<div class="error" role="alert">Daten konnten nicht geladen werden</div>';
     }
   }
 

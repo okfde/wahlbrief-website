@@ -3,36 +3,37 @@ layout: default
 ---
 
 <div class="container-fluid h-100">
-    <div class="row h-100">
-        {% include app/sidebar.html %}
+  <div class="row h-100">
+    {% include app/sidebar.html %}
 
-        <div id="right-side" class="col-md-12 col-lg-6">
-            <div class="container d-flex flex-column h-100 py-3 py-lg-5 px-2 px-lg-5">
-                <div class="row">
-                    {% include app/step-nav.html %}
+    <main id="main-content" tabindex="-1" class="col-md-12 col-lg-6">
+      <div class="container d-flex flex-column h-100 py-3 py-lg-5 px-2 px-lg-5">
+        <div class="row">
+          {% include app/step-nav.html %}
 
-                    <div class="tab-content" id="pills-tabContent">
-                        {% include app/step-1.html %}
-                        {% include app/step-2.html %}
-                        {% include app/step-3.html %}
+          <div class="tab-content" id="pills-tabContent">
+            {% include app/step-1.html %} {% include app/step-2.html %} {%
+            include app/step-3.html %}
 
-                        <div class="d-block d-lg-none">
-                            {% include footer.html %}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="d-block d-lg-none">{% include footer.html %}</div>
+          </div>
         </div>
-    </div>
+      </div>
+    </main>
+  </div>
 </div>
 
 <template id="right.invalidemail">{% t right.invalidemail %}</template>
-<template id="right.successfulregistration">{% t right.successfulregistration %}</template>
+<template id="right.successfulregistration"
+  >{% t right.successfulregistration %}</template
+>
 <template id="right.message.sent">{% t right.message.sent %}</template>
 <template id="right.invalidZipcode">{% t right.invalidZipcode %}</template>
 <template id="right.zipNotFound">{% t right.zipNotFound %}</template>
 <template id="translation-sent">{% t right.message.sent %}</template>
 <template id="translation-copied">{% t right.message.success %}</template>
 {% if page.data %}
-<script id="page-data" type="application/json">{{ page.data | jsonify }}</script>
+<script id="page-data" type="application/json">
+  {{ page.data | jsonify }}
+</script>
 {% endif %}
